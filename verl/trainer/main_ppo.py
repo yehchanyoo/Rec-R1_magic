@@ -17,21 +17,21 @@ Note that we don't combine the main with ray_trainer as ray_trainer is used by o
 
 from verl import DataProto
 import torch
-from verl.utils.reward_score import gsm8k, math, multiply, countdown, matching
+from verl.utils.reward_score import gsm8k, multiply, countdown, matching, amazon_review
 from verl.trainer.ppo.ray_trainer import RayPPOTrainer
 
 
 def _select_rm_score_fn(data_source):
     if data_source == 'openai/gsm8k':
         return gsm8k.compute_score
-    elif data_source == 'lighteval/MATH':
-        return math.compute_score
     elif "multiply" in data_source or "arithmetic" in data_source:
         return multiply.compute_score
     elif "countdown" in data_source:
         return countdown.compute_score
     elif "matching" in data_source:
         return matching.compute_score
+    elif "Appliances" in data_source or 'Beauty' in data_source or 'Fashion' in data_source:
+        return amazon_review.compute_score
     else:
         raise NotImplementedError
 

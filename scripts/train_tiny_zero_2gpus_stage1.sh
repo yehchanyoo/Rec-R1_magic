@@ -3,11 +3,11 @@ DATE=$(date '+%Y-%m-%d-%H-%M-%S')
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=$DATA_DIR/train.parquet \
-    data.val_files=$DATA_DIR/test.parquet \
+    data.val_files=$DATA_DIR/val.parquet \
     data.train_batch_size=32 \
     data.val_batch_size=32 \
     data.max_prompt_length=2048 \
-    data.max_response_length=3000 \
+    data.max_response_length=2048 \
     actor_rollout_ref.model.path=$BASE_MODEL \
     actor_rollout_ref.model.use_remove_padding=True \
     actor_rollout_ref.model.enable_gradient_checkpointing=True \
@@ -16,7 +16,7 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.actor.ppo_mini_batch_size=256 \
     actor_rollout_ref.actor.ppo_micro_batch_size=4 \
     actor_rollout_ref.actor.use_kl_loss=True \
-    actor_rollout_ref.actor.kl_loss_coef=0.2 \
+    actor_rollout_ref.actor.kl_loss_coef=0.001 \
     actor_rollout_ref.actor.kl_loss_type=low_var_kl \
     actor_rollout_ref.actor.fsdp_config.grad_offload=True \
     actor_rollout_ref.actor.fsdp_config.optimizer_offload=True \
@@ -37,4 +37,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.test_freq=10 \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
-    trainer.total_epochs=5 2>&1 | tee exp_log/3b-grpo-verl_4gpus_$DATE.log
+    trainer.total_epochs=5 2>&1 | tee exp_log/3b-grpo-verl_2gpus_$DATE.log

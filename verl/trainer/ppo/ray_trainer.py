@@ -262,14 +262,14 @@ def compute_reward_metrics(batch):
     reward_metrics = {}
     reward_metrics["reward/mean"] = torch.mean(reward_tensor).detach().item()
     # Calculate all_correct ratio (value == 3)
-    all_correct = torch.sum(reward_tensor == 3).float() / reward_tensor.numel()
+    all_correct = torch.sum(reward_tensor > 0.3).float() / reward_tensor.numel()
     reward_metrics["reward/all_correct_ratio"] = all_correct.detach().item()
     # Calculate format_error ratio (value == -1)
-    format_error = torch.sum(reward_tensor == -1).float() / reward_tensor.numel()
+    format_error = torch.sum(reward_tensor == -0.3).float() / reward_tensor.numel()
     reward_metrics["reward/format_error_ratio"] = format_error.detach().item()
     # Calculate wrong answer ratio (value == -1)
-    format_error = torch.sum(reward_tensor == 0).float() / reward_tensor.numel()
-    reward_metrics["reward/wrong_answer_ratio"] = format_error.detach().item()
+    all_wrong = torch.sum(reward_tensor == 0).float() / reward_tensor.numel()
+    reward_metrics["reward/wrong_answer_ratio"] = all_wrong.detach().item()
     
     return reward_metrics
 
