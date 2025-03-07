@@ -62,6 +62,8 @@ def load_rec_dataset(data_dir):
             val_data.append(json.loads(line))
     
     val_data = val_data[:-int(0.1 * len(val_data))]
+    # further choose about 800 samples from the val data
+    val_data = val_data[:800]
 
     test_data = []
     with open(os.path.join(data_dir, 'test.jsonl'), 'r') as f:
@@ -70,8 +72,8 @@ def load_rec_dataset(data_dir):
 
     test_unseen_data = test_data[-int(0.1 * len(test_data)):]
     test_seen_data = test_data[:-int(0.1 * len(test_data))]
-
-    assert len(val_data) == len(train_data) == len(test_seen_data)
+    
+    assert len(train_data) == len(test_seen_data)
     
     return train_data, val_data, test_seen_data, test_unseen_data
 
@@ -81,12 +83,12 @@ def load_item_dict(item_data_dir):
     def process_item(data):
         contents = (
             f"**Title:** {data.get('title', '')} "
-            f"**Store:** {data.get('store', '')} "
-            f'**Features:** {" | ".join(data.get("features", []))} '
+            # f"**Store:** {data.get('store', '')} "
+            # f'**Features:** {" | ".join(data.get("features", []))} '
             f'**Description:** {" ".join(data.get("description", ""))} '
             f"**Main Category:** {data.get('main_category', '')} "
             f"**Categories:** {', '.join(data.get('categories', []))} "
-            f"**Details:** {' | '.join(f'{k}: {v}' for k, v in data.get('details', {}).items())}"
+            # f"**Details:** {' | '.join(f'{k}: {v}' for k, v in data.get('details', {}).items())}"
         )
 
         return contents
@@ -194,7 +196,7 @@ if __name__ == '__main__':
     # shuffle the dataset
     train_dataset = train_dataset.shuffle(seed=42)
 
-    threshold = 2048
+    threshold = 3000
     
     def truncate(train_dataset, threshold):
         count = 0

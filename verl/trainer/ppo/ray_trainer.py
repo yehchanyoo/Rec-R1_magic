@@ -454,7 +454,7 @@ class RayPPOTrainer(object):
             if data_source not in data_source_reward:
                 data_source_reward[data_source] = []
             data_source_reward[data_source].append(reward_tensor[i].item())
-
+        
         metric_dict = {}
         for data_source, rewards in data_source_reward.items():
             # metric_dict[f'val/test_score/{data_source}'] = np.mean(rewards)

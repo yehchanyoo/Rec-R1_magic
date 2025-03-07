@@ -24,10 +24,25 @@ def evaluate_model(model, tokenizer, data_path, device, model_name, save_dir, ba
     
     model.to(device)
     generated_texts = {}
-    
+
+    if os.path.exists(os.path.join(save_dir, f"eval_results_{model_name}.json")):
+        with open(os.path.join(save_dir, f"eval_results_{model_name}.json"), "r") as f:
+            generated_texts = json.load(f)
+
     for batch_start in tqdm(range(0, len(inputs), batch_size), desc="Evaluating"):
         batch_end = min(batch_start + batch_size, len(inputs))
         batch_inputs = inputs[batch_start:batch_end]
+
+        # remove already generated texts from the batch_inputs
+        # the idx is from batch_start to batch_end
+        for idx in range(batch_start, batch_end):
+            if str(idx) in generated_texts:
+                batch_inputs[idx - batch_start] = ""
+
+        batch_inputs = [item for item in batch_inputs if item != ""]
+        
+        if len(batch_inputs) == 0:
+            continue
         
         tokenized_inputs = tokenizer(batch_inputs, return_tensors="pt", padding=True, truncation=True).to(device)
         
@@ -40,7 +55,7 @@ def evaluate_model(model, tokenizer, data_path, device, model_name, save_dir, ba
         for i, output in enumerate(output_ids):
             generated_text = tokenizer.decode(output, skip_special_tokens=True)
             idx = batch_start + i
-            generated_texts[idx] = {
+            generated_texts[str(idx)] = {
                 "generated_text": generated_text,
                 "target": targets[idx]
             }
@@ -57,7 +72,7 @@ def main():
     parser.add_argument("--data_path", type=str, default="data/matching/qwen-instruct/test.parquet")
     parser.add_argument("--model_name", type=str, default="matching-qwen2.5-3b-inst-ppo-2gpus")
     parser.add_argument("--save_dir", type=str, default="results")
-    parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--batch_size", type=int, default=4)
     args = parser.parse_args()
     
     device = "cuda" if torch.cuda.is_available() else "cpu"

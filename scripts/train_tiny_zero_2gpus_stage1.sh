@@ -3,10 +3,10 @@ DATE=$(date '+%Y-%m-%d-%H-%M-%S')
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=$DATA_DIR/train.parquet \
-    data.val_files=$DATA_DIR/test_unseen.parquet \
+    data.val_files=$DATA_DIR/val.parquet \
     data.train_batch_size=32 \
     data.val_batch_size=32 \
-    data.max_prompt_length=2048 \
+    data.max_prompt_length=3000 \
     data.max_response_length=512 \
     actor_rollout_ref.model.path=$BASE_MODEL \
     actor_rollout_ref.model.use_remove_padding=True \
