@@ -270,6 +270,10 @@ def compute_reward_metrics(batch):
     # Calculate wrong answer ratio (value == -1)
     all_wrong = torch.sum(reward_tensor == 0).float() / reward_tensor.numel()
     reward_metrics["reward/wrong_answer_ratio"] = all_wrong.detach().item()
+
+    # avg value of reward > 0.3
+    ndcg_at_3000 = (torch.sum(reward_tensor[reward_tensor > 0.3]).float() - 0.3) / reward_tensor.numel()
+    reward_metrics["reward/ndcg_at_3000"] = ndcg_at_3000
     
     return reward_metrics
 

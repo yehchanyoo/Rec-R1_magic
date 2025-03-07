@@ -65,6 +65,8 @@ def validate_response_structure(processed_str: str, do_print: bool) -> bool:
         print("\n[Structure Validation]")
     validation_passed = True
 
+    processed_str = '<think> </think>' + processed_str
+    
     # Check required tags
     tags = {
         'think_start': ('<think>', 1),
@@ -186,7 +188,7 @@ def compute_score(solution_str, ground_truth, format_reward=0.3, answer_reward=1
             total_score = 0
         else:
             total_score = format_score
-    do_print=True
+    
     if do_print:
         print("\n" + "-"*80)
         print(f" Final Score ".center(80, '-'))

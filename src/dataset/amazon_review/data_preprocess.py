@@ -31,14 +31,14 @@ def make_prefix(dp, template_type):
 Assistant: Let me solve this step by step. 
 <think>"""
     elif template_type == 'qwen-instruct':
-        input_str = """<|im_start|>system\nYou are an AI assistant specializing in analyzing user purchase behaviors and providing personalized recommendations. You first thinks about the reasoning process in the mind and then provides the user with the answer.<|im_end|>\n<|im_start|>user\n""" + input_str
-        input_str += """\nShow your work in <think> </think> tags. Your final response must be in JSON format within <answer> </answer> tags. The generated query should use Boolean operators (AND, OR) to structure your query logically. For example,
+        input_str = """<|im_start|>system\nYou are an AI assistant specializing in analyzing user purchase behaviors and providing personalized recommendations.<|im_end|>\n<|im_start|>user\n""" + input_str
+        input_str += """\nYour final response must be in JSON format within <answer> </answer> tags. The generated query should use Boolean operators (AND, OR) to structure your query logically. For example,
 <answer>
 {
     "query": "(xxx AND yyy) OR zzz AND (aaa OR bbb)"
 }
 </answer>.<|im_end|>
-<|im_start|>assistant\nLet me solve this step by step.\n<think>"""
+<|im_start|>assistant\n"""
     elif template_type == 'gpt':
         input_str += "Solve this step by step and return the final answer in <answer> </answer> tags, for example, <answer> Trial-level eligibility: 2) Eligible.  </answer>."
     else:
@@ -207,7 +207,7 @@ if __name__ == '__main__':
                 truncate_length = max(threshold - 200, 0)  # Ensure we don't end up with a negative index
                 text = ' '.join(words[-truncate_length:])
                 train_dataset[i]['prompt'][0]['content'] = text
-        
+
         print(f"Truncated {count} examples")
     
         return train_dataset
