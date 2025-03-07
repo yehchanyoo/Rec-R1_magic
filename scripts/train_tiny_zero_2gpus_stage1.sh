@@ -3,7 +3,7 @@ DATE=$(date '+%Y-%m-%d-%H-%M-%S')
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files=$DATA_DIR/train.parquet \
-    data.val_files=$DATA_DIR/val.parquet \
+    data.val_files=$DATA_DIR/test_unseen.parquet \
     data.train_batch_size=32 \
     data.val_batch_size=32 \
     data.max_prompt_length=2048 \
@@ -24,7 +24,7 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.tensor_model_parallel_size=$ROLLOUT_TP_SIZE \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.3 \
     actor_rollout_ref.rollout.name=vllm \
-    actor_rollout_ref.rollout.n=8 \
+    actor_rollout_ref.rollout.n=12 \
     actor_rollout_ref.ref.log_prob_micro_batch_size=2 \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
     algorithm.kl_ctrl.kl_coef=0.001 \

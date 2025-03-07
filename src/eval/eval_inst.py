@@ -5,6 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from tqdm import tqdm
 import json
 import os
+import pdb
 
 CACHE_DIR = "/srv/local/data/linjc/hub"
 
@@ -19,7 +20,7 @@ def evaluate_model(model, tokenizer, data_path, device, model_name, save_dir, ba
     df = pd.read_parquet(data_path)
     
     inputs = [item[0]['content'] for item in df['prompt'].tolist()]
-    targets = df['label'].tolist()
+    targets = [item['parent_asin'] for item in df['target'].tolist()]
     
     model.to(device)
     generated_texts = {}
@@ -56,7 +57,7 @@ def main():
     parser.add_argument("--data_path", type=str, default="data/matching/qwen-instruct/test.parquet")
     parser.add_argument("--model_name", type=str, default="matching-qwen2.5-3b-inst-ppo-2gpus")
     parser.add_argument("--save_dir", type=str, default="results")
-    parser.add_argument("--batch_size", type=int, default=64)
+    parser.add_argument("--batch_size", type=int, default=16)
     args = parser.parse_args()
     
     device = "cuda" if torch.cuda.is_available() else "cpu"

@@ -272,7 +272,7 @@ def compute_reward_metrics(batch):
     reward_metrics["reward/wrong_answer_ratio"] = all_wrong.detach().item()
 
     # avg value of reward > 0.3
-    ndcg_at_3000 = (torch.sum(reward_tensor[reward_tensor > 0.3]).float() - 0.3) / reward_tensor.numel()
+    ndcg_at_3000 = (torch.sum(reward_tensor[reward_tensor > 0.3] - 0.3).float()) / reward_tensor.numel()
     reward_metrics["reward/ndcg_at_3000"] = ndcg_at_3000
     
     return reward_metrics
@@ -458,9 +458,9 @@ class RayPPOTrainer(object):
         metric_dict = {}
         for data_source, rewards in data_source_reward.items():
             # metric_dict[f'val/test_score/{data_source}'] = np.mean(rewards)
-            count_equal_3 = sum(1 for reward in rewards if reward == 3)
+            count_ndcg = sum(reward - 0.3 for reward in rewards if reward > 0.3)
             total_count = len(rewards)
-            metric_dict[f'val/test_score/{data_source}'] = count_equal_3 / total_count if total_count > 0 else 0
+            metric_dict[f'val/test_score/{data_source}'] = count_ndcg / total_count if total_count > 0 else 0
 
         return metric_dict
 
