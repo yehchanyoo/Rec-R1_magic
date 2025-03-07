@@ -13,8 +13,10 @@ class PyseriniMultiFieldSearch:
         """Perform search across multiple fields"""
         
         # Construct a query that searches across multiple fields
-        query = f"title:{query_str} OR store:{query_str} OR details:{query_str} OR main_category:{query_str}"
+        # query = f"title:{query_str} OR store:{query_str} OR details:{query_str} OR main_category:{query_str}"
         
+        query = f"contents:{query_str}"
+
         # Execute the search
         hits = self.searcher.search(query, k=top_k)
 
@@ -35,8 +37,13 @@ class PyseriniMultiFieldSearch:
         :return: Dictionary {query: [(parent_asin, title, score), ...]}
         """
         # Construct field-specific queries
+        # field_queries = [
+        #     f"(title:{query} OR store:{query} OR details:{query} OR main_category:{query}"
+        #     for query in queries
+        # ]
+        # contents
         field_queries = [
-            f"(title:{query} OR store:{query} OR details:{query} OR main_category:{query}"
+            f"(contents:{query}) OR (title:{query}) OR (store:{query}) OR (details:{query}) OR (main_category:{query}) OR (description:{query}) OR (features:{query}) OR (categories:{query}) OR (average_rating:{query})"
             for query in queries
         ]
         
@@ -73,7 +80,7 @@ if __name__ == "__main__":
     #     print(f"ASIN: {asin}, Title: {title}, Score: {score}")
     
     queries = [
-        "(NOT 3-Pack Replacement for Whirlpool) AND Amazon home",
+        "3-Pack Replacement for Whirlpool AND Amazon home AND Rating: 4.5",
         # "Leather Conditioner for Shoes OR Furniture",
         # "Organic Skin Care AND Vegan Moisturizer",
     ]

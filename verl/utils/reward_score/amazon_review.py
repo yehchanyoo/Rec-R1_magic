@@ -135,7 +135,7 @@ def calculate_answer_score(json_str, label, do_print=False):
         data = json.loads(json_str)
         query = data['query']
         target = label
-        results = retriver_items(query, top_k=3000, threads=16)
+        results = retriver_items(query, top_k=3000, threads=32)
         asin_results = [item[0] for item in results[query]]
         answer_score = ndcg_at_k(asin_results, target, 3000)
 
