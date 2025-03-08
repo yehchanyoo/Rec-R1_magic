@@ -259,20 +259,22 @@ def compute_data_metrics(batch, use_critic=True):
 def compute_reward_metrics(batch):
     reward_tensor = batch.batch['token_level_scores'].sum(-1)
 
+    format_score = 0.1
+
     reward_metrics = {}
     reward_metrics["reward/mean"] = torch.mean(reward_tensor).detach().item()
     # Calculate all_correct ratio (value == 3)
-    all_correct = torch.sum(reward_tensor > 0.3).float() / reward_tensor.numel()
+    all_correct = torch.sum(reward_tensor > format_score).float() / reward_tensor.numel()
     reward_metrics["reward/all_correct_ratio"] = all_correct.detach().item()
     # Calculate format_error ratio (value == -1)
-    format_error = torch.sum(reward_tensor == -0.3).float() / reward_tensor.numel()
+    format_error = torch.sum(reward_tensor < 0).float() / reward_tensor.numel()
     reward_metrics["reward/format_error_ratio"] = format_error.detach().item()
     # Calculate wrong answer ratio (value == -1)
     all_wrong = torch.sum(reward_tensor == 0).float() / reward_tensor.numel()
     reward_metrics["reward/wrong_answer_ratio"] = all_wrong.detach().item()
-
-    # avg value of reward > 0.3
-    ndcg_at_3000 = (torch.sum(reward_tensor[reward_tensor > 0.3] - 0.3).float()) / reward_tensor.numel()
+    
+    # avg value of reward > format_score
+    ndcg_at_3000 = (torch.sum(reward_tensor[reward_tensor > format_score] - format_score).float()) / reward_tensor.numel()
     reward_metrics["reward/ndcg_at_3000"] = ndcg_at_3000
     
     return reward_metrics
@@ -456,9 +458,11 @@ class RayPPOTrainer(object):
             data_source_reward[data_source].append(reward_tensor[i].item())
         
         metric_dict = {}
+        format_score = 0.1
+
         for data_source, rewards in data_source_reward.items():
             # metric_dict[f'val/test_score/{data_source}'] = np.mean(rewards)
-            count_ndcg = sum(reward - 0.3 for reward in rewards if reward > 0.3)
+            count_ndcg = sum(reward - format_score for reward in rewards if reward > format_score)
             total_count = len(rewards)
             metric_dict[f'val/test_score/{data_source}'] = count_ndcg / total_count if total_count > 0 else 0
 

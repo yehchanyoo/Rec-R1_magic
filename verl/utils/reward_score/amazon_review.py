@@ -145,7 +145,7 @@ def calculate_answer_score(json_str, label, do_print=False):
     
     return answer_score
 
-def compute_score(solution_str, ground_truth, format_reward=0.3, answer_reward=1.):
+def compute_score(solution_str, ground_truth, format_reward=0.1, answer_reward=1.):
     """The scoring function for countdown task.
     
     Args:
@@ -166,8 +166,8 @@ def compute_score(solution_str, ground_truth, format_reward=0.3, answer_reward=1
     response_format_correct = validate_response_structure(processed_str, do_print)
     json_format_correct = check_json_format(answer_text, do_print)
     format_correct = response_format_correct and json_format_correct
-
-    format_score = format_reward if format_correct else -abs(format_reward)
+    
+    format_score = format_reward if format_correct else -2
     # if do_print:
     #     print(f"\n  Format validation: {'PASS' if format_correct else 'FAIL'}")
     #     print(f"Format score: {format_score}")
