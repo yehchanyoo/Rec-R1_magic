@@ -31,7 +31,7 @@ def filter_out_existing(csv_file_path, filtered_reviews, item_metadata_dict):
     existing_pairs = set(zip(df["item_id"], df["user_id"]))
     initial_count = len(filtered_reviews)
     filtered_reviews = [
-        review for review in tqdm(filtered_reviews) if ((review["asin"], review["user_id"]) not in existing_pairs) and (review["asin"] in item_metadata_dict)
+        review for review in tqdm(filtered_reviews) if ((review["parent_asin"], review["user_id"]) not in existing_pairs) and (review["parent_asin"] in item_metadata_dict)
     ]
     removed_count = initial_count - len(filtered_reviews)
     print(f"Removed {removed_count} existing reviews from the dataset.")
@@ -71,7 +71,7 @@ if __name__ == '__main__':
         filtered_reviews = filter_out_existing(args.csv_file_path, filtered_reviews, item_metadata_dict)
 
         review_list.extend(filtered_reviews)
-
+    
     # Save the filtered reviews to a JSONL file
     with open("data/amazon_c4/raw/filtered_reviews.jsonl", "w", encoding="utf-8") as file:
         for review in review_list:

@@ -17,7 +17,7 @@ Note that we don't combine the main with ray_trainer as ray_trainer is used by o
 
 from verl import DataProto
 import torch
-from verl.utils.reward_score import gsm8k, multiply, countdown, matching, amazon_review
+from verl.utils.reward_score import gsm8k, multiply, countdown, matching, amazon_review, amazon_c4
 from verl.trainer.ppo.ray_trainer import RayPPOTrainer
 
 
@@ -32,6 +32,8 @@ def _select_rm_score_fn(data_source):
         return matching.compute_score
     elif "Appliances" in data_source or 'Beauty' in data_source or 'Fashion' in data_source:
         return amazon_review.compute_score
+    elif "amazon_c4" in data_source:
+        return amazon_c4.compute_score
     else:
         raise NotImplementedError
 

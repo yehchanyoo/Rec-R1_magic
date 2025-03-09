@@ -5,6 +5,8 @@ import re
 import multiprocessing
 from tqdm import tqdm
 from collections import defaultdict
+import time
+import random
 
 import sys
 sys.path.append('./')
@@ -31,7 +33,8 @@ Item metadata:
 ```{item_metadata}```
 """
 
-def process_reviews(batch, item_metadata_dict, output_dir, process_id):
+def process_reviews(input):
+    batch, item_metadata_dict, output_dir, process_id = input
     """Process a batch of reviews and save to a unique output file."""
     output_file = os.path.join(output_dir, f"filtered_reviews_{process_id}.jsonl")
 
@@ -46,15 +49,17 @@ def process_reviews(batch, item_metadata_dict, output_dir, process_id):
 
         while attempts < 3:
             try:
+                attempts += 1
                 response = gpt_chat_4omini(prompt)
                 # Extract <relevance> and <query> tags
                 relevance_match = re.findall(r'<relevance>(\d+)</relevance>', response)
                 query_match = re.findall(r'<query>(.*?)</query>', response)
 
-                if relevance_match and int(relevance_match[0]) == 1 and query_match:
+                if relevance_match and int(relevance_match[0]) == 1:
                     query = query_match[0]
                     break
             except:
+                print(f"Error processing review {idx} in attempt {attempts}")
                 attempts += 1
 
         # Save the query if found
@@ -69,6 +74,10 @@ def process_reviews(batch, item_metadata_dict, output_dir, process_id):
             }
             with open(output_file, "a", encoding="utf-8") as file:
                 file.write(json.dumps(output_dict) + "\n")
+        
+        # sleep for random (0,1)
+        time.sleep(0.1)
+        
 
 
 def chunk_list(data, num_chunks):
@@ -82,7 +91,7 @@ if __name__ == "__main__":
     parser.add_argument('--data_dir', type=str, default='data/amazon_c4/raw/filtered_reviews.jsonl')
     parser.add_argument('--output_dir', type=str, default='data/amazon_c4/filtered/raw')
     parser.add_argument('--meta_data_path', type=str, default='data/amazon_c4/raw/sampled_item_metadata_1M.jsonl')
-    parser.add_argument('--num_workers', type=int, default=2, help="Number of parallel workers")
+    parser.add_argument('--num_workers', type=int, default=4, help="Number of parallel workers")
     args = parser.parse_args()
     
     # Load metadata
@@ -90,14 +99,21 @@ if __name__ == "__main__":
     
     # Create output directory if not exists
     os.makedirs(args.output_dir, exist_ok=True)
-    
+
     # Read filtered reviews
     with open(args.data_dir, "r", encoding="utf-8") as file:
         filtered_reviews = [json.loads(line.strip()) for line in file]
 
+
+    # random select 30000 reviews, seed=42
+    random.seed(42)
+    filtered_reviews = random.sample(filtered_reviews, 30000)
+
     # Split data into chunks for multiprocessing
     review_batches = chunk_list(filtered_reviews, args.num_workers)
 
+    review_chuncks = [(batch, item_metadata_dict, args.output_dir, i) for i, batch in enumerate(review_batches)]
+
     # Create a multiprocessing pool
     with multiprocessing.Pool(args.num_workers) as pool:
-        pool.starmap(process_reviews, [(batch, item_metadata_dict, args.output_dir, i) for i, batch in enumerate(review_batches)])
+        pool.map(process_reviews, review_chuncks)
