@@ -59,7 +59,7 @@ def load_rec_dataset(data_dir):
     # select the last 10% of the training data as validation data
     val_data_1 = train_data[-int(0.05 * len(train_data)):]
     train_data = train_data[:-int(0.05 * len(train_data))]
-
+    
     # select the last 10% of the test data as validation data_2
     val_data_2 = test_data[-int(0.05 * len(test_data)):]
     

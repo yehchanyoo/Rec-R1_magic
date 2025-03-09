@@ -74,6 +74,8 @@ def main():
     parser.add_argument("--save_dir", type=str, default="results")
     parser.add_argument("--batch_size", type=int, default=4)
     args = parser.parse_args()
+
+    os.makedirs(args.save_dir, exist_ok=True)
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
     tokenizer, model = load_model(args.model_path)
