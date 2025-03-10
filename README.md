@@ -2,7 +2,7 @@
 
 ## Installation
 
-```
+```bash
 conda create -n zero python=3.9
 # install torch [or you can skip this step and let vllm to install the correct version for you]
 pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
@@ -17,7 +17,17 @@ pip install -e .
 pip3 install flash-attn --no-build-isolation
 # quality of life
 pip install wandb IPython matplotlib
+
+# lucene supported by pyserini
+pip install pyserini
+pip install faiss-gpu
+
+# if you don't have jave in the environment
+conda install -c conda-forge openjdk=17
+export JAVA_HOME=~/miniconda3/envs/zero
+export PATH=$JAVA_HOME/bin:$PATH
 ```
+
 
 ## Get started
 
@@ -26,6 +36,9 @@ pip install wandb IPython matplotlib
 conda activate zero
 python examples/data_preprocess/patient_trial_matching.py
 ```
+
+### Build a Lucene Database
+See the `src/Lucene/README.md` file.
 
 ### Run Training
 ```
