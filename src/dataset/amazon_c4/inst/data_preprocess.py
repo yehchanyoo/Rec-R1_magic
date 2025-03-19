@@ -18,10 +18,7 @@ import pdb
 
 PROMPT = """Your task is to generate a structured Boolean search query based on the user's natural language user query.
 Below is the user's natural language query:
-```{user_query}```
-
-Then, generate a structured Boolean search query based on the user's natural language query.
-"""
+```{user_query}```"""
 
 def make_prefix(dp, template_type):
     input_str = PROMPT.format(user_query=dp['query'])
@@ -31,14 +28,14 @@ def make_prefix(dp, template_type):
 Assistant: Let me solve this step by step. 
 <think>"""
     elif template_type == 'qwen-instruct':
-        input_str = """<|im_start|>system\nYou are an AI assistant specializing in converting natural language user queries into structured Boolean search queries.<|im_end|>\n<|im_start|>user\n""" + input_str
-        input_str += """\nYour final response must be in JSON format within <answer> </answer> tags. The generated query should use Boolean operators (AND, OR) to structure your query logically. Prioritize terms that contribute the most to distinguishing relevant results. For example,
+        input_str = """<|im_start|>system\nYou are an AI assistant specializing in converting natural language user queries into structured Boolean search queries. You first thinks about the reasoning process in the mind and then provides the user with the answer.<|im_end|>\n<|im_start|>user\n""" + input_str
+        input_str += """\nShow your work in <think> </think> tags. Your final response must be in JSON format within <answer> </answer> tags. The generated query should use Boolean operators (AND, OR) to structure your query logically. For example,
 <answer>
 {
     "query": xxx
 }
 </answer>.<|im_end|>
-<|im_start|>assistant<answer>\n"""
+<|im_start|>assistant\nLet me solve this step by step.\n<think>"""
     elif template_type == 'gpt':
         input_str += "Solve this step by step and return the final answer in <answer> </answer> tags, for example, <answer> Trial-level eligibility: 2) Eligible.  </answer>."
     else:
@@ -60,8 +57,8 @@ def load_rec_dataset(data_dir):
     val_data_1 = train_data[-int(0.05 * len(train_data)):]
     train_data = train_data[:-int(0.05 * len(train_data))]
     
-    # select the last 10% of the test data as validation data_2
-    val_data_2 = test_data[-int(0.05 * len(test_data)):]
+    # select random 10% of the test data as validation data_2
+    val_data_2 = random.sample(test_data, int(0.1 * len(test_data)))
     
     return train_data, val_data_1, val_data_2, test_data
 

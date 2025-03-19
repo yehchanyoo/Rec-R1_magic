@@ -64,8 +64,6 @@ def validate_response_structure(processed_str: str, do_print: bool) -> bool:
     if do_print:
         print("\n[Structure Validation]")
     validation_passed = True
-
-    processed_str = '<think> </think>' + processed_str
     
     # Check required tags
     tags = {
