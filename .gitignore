@@ -9,7 +9,6 @@
 **/wandb
 
 scripts/hidden
-data
 temp
 condor_scripts
 .bash_history
@@ -17,6 +16,7 @@ logs
 exp_logs
 *.key
 database
+raw
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
