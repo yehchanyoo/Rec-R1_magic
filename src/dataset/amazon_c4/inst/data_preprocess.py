@@ -22,12 +22,7 @@ Below is the user's natural language query:
 
 def make_prefix(dp, template_type):
     input_str = PROMPT.format(user_query=dp['query'])
-    if template_type == 'base':
-        input_str = """A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant first thinks about the reasoning process in the mind and then provides the user with the answer.\n""" + input_str
-        input_str += """\nShow your work in <think> </think> tags. You should return the final answer in <answer> </answer> tags, for example, <answer> Trial-level eligibility: 2) Eligible. </answer>. 
-Assistant: Let me solve this step by step. 
-<think>"""
-    elif template_type == 'qwen-instruct':
+    if template_type == 'qwen-instruct':
         input_str = """<|im_start|>system\nYou are an AI assistant specializing in converting natural language user queries into structured Boolean search queries. You first thinks about the reasoning process in the mind and then provides the user with the answer.<|im_end|>\n<|im_start|>user\n""" + input_str
         input_str += """\nShow your work in <think> </think> tags. Your final response must be in JSON format within <answer> </answer> tags. The generated query should use Boolean operators (AND, OR) to structure your query logically. For example,
 <answer>
@@ -36,8 +31,6 @@ Assistant: Let me solve this step by step.
 }
 </answer>.<|im_end|>
 <|im_start|>assistant\nLet me solve this step by step.\n<think>"""
-    elif template_type == 'gpt':
-        input_str += "Solve this step by step and return the final answer in <answer> </answer> tags, for example, <answer> Trial-level eligibility: 2) Eligible.  </answer>."
     else:
         raise NotImplementedError
 

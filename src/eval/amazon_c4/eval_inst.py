@@ -11,7 +11,7 @@ CACHE_DIR = "/srv/local/data/linjc/hub"
 
 def load_model(model_path):
     tokenizer = AutoTokenizer.from_pretrained(model_path, padding_side='left', cache_dir=CACHE_DIR)
-    model = AutoModelForCausalLM.from_pretrained(model_path, cache_dir=CACHE_DIR, attn_implementation="flash_attention_2", torch_dtype=torch.bfloat16, device_map='auto',)
+    model = AutoModelForCausalLM.from_pretrained(model_path, cache_dir=CACHE_DIR, device_map='auto', torch_dtype=torch.bfloat16, attn_implementation="flash_attention_2")
     model.eval()
     return tokenizer, model
 
@@ -77,9 +77,9 @@ def main():
     parser.add_argument("--data_path", type=str, default="data/matching/qwen-instruct/test.parquet")
     parser.add_argument("--model_name", type=str, default="matching-qwen2.5-3b-inst-ppo-2gpus")
     parser.add_argument("--save_dir", type=str, default="results")
-    parser.add_argument("--batch_size", type=int, default=1)
-    parser.add_argument('--process_id', type=int, default=0)
-    parser.add_argument('--num_processes', type=int, default=2)
+    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument('--process_id', type=int, default=None)
+    parser.add_argument('--num_processes', type=int, default=None)
     args = parser.parse_args()
     
     os.makedirs(args.save_dir, exist_ok=True)

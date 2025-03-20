@@ -1,7 +1,10 @@
 import json
 from pyserini.search.lucene import LuceneSearcher
 import time
+import re
 import pdb
+
+
 
 class PyseriniMultiFieldSearch:
     def __init__(self, index_dir="pyserini_index"):
@@ -72,14 +75,14 @@ if __name__ == "__main__":
     search_system = PyseriniMultiFieldSearch(index_dir='database/amazon_c4/pyserini_index')
     
     queries = [
-        "3-Pack Replacement for Whirlpool AND Amazon home",
+        "3-Pack Replacement for Whirlpool AND (Water Inlet OR brand new)",
     ]
     
     tic = time.time()
-    search_results = search_system.batch_search(queries, top_k=10, threads=32)
+    search_results = search_system.batch_search(queries, top_k=3, threads=32)
     print(f"Search time: {time.time() - tic:.2f}s")
     # Print results
     for query, results in search_results.items():
-        print(f"\n🔍 Query: {query}")
+        # print(f"\n🔍 Query: {query}")
         for asin, content, score in results:
             print(f"  ASIN: {asin}, Content: {content}, Score: {score}")
