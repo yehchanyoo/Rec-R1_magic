@@ -33,30 +33,39 @@ def make_prefix(dp):
 
     return input_str
 
-def load_rec_dataset(data_dir, domain_name):
-    with open(os.path.join(data_dir, f'{domain_name}.json'), 'r') as f:
+def load_rec_dataset(data_dir):
+    with open(os.path.join(data_dir, f'train.json'), 'r') as f:
+        train_data = json.load(f)
+
+    # split 1000 examples from the training data for validation
+    val_data = train_data[:1000]
+    train_data = train_data[1000:]
+
+    with open(os.path.join(data_dir, f'test.json'), 'r') as f:
         test_data = json.load(f)
-    
-    return test_data
+
+    return train_data, val_data, test_data
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--domain_name', type=str, choices=['Games', 'Baby', 'Office', 'Sports'], default='Games')
-    parser.add_argument('--local_dir', default='data/amazon_c4/test_subset')
+    parser.add_argument('--domain_name', type=str, choices=['Video_Games', 'Baby', 'Office', 'Sports'], default='Video_Games')
+    parser.add_argument('--local_dir', default='data/amazon_c4/subset')
     parser.add_argument('--hdfs_dir', default=None)
     parser.add_argument('--save_dir', type=str, default='data/amazon_c4/inst/subset')
     
     args = parser.parse_args()
     
+    data_source = f'amazon_c4_{args.domain_name}'
+
+    file_dir = os.path.join(args.local_dir, args.domain_name)
     save_dir = os.path.join(args.save_dir, args.domain_name)
     os.makedirs(save_dir, exist_ok=True)
+    
+    train_data, val_data, test_data = load_rec_dataset(file_dir)
 
-    test_data = load_rec_dataset(args.local_dir, args.domain_name)
-
-    # train_dataset = Dataset.from_list(train_data)
-    # val_1_dataset = Dataset.from_list(val_data_1)
-    # val_2_dataset = Dataset.from_list(val_data_2)
+    train_dataset = Dataset.from_list(train_data)
+    val_dataset = Dataset.from_list(val_data)
     test_dataset = Dataset.from_list(test_data)
 
     
@@ -67,7 +76,7 @@ if __name__ == '__main__':
                 "target": example['item_id'],
             }
             data = {
-                "data_source": data_source,
+                "data_source": data_source + f'_{split}',
                 "prompt": [{
                     "role": "user",
                     "content": question,
@@ -85,16 +94,15 @@ if __name__ == '__main__':
             return data
         return process_fn
     
-    # train_dataset = train_dataset.map(function=make_map_fn('train', 'amazon_c4_train'), with_indices=True)
-    # val_1_dataset = val_1_dataset.map(function=make_map_fn('val', 'amazon_c4_val'), with_indices=True)
-    # val_2_dataset = val_2_dataset.map(function=make_map_fn('val', 'amazon_c4_test_200'), with_indices=True)
-    test_dataset = test_dataset.map(function=make_map_fn('test', 'amazon_c4_test'), with_indices=True)
+    train_dataset = train_dataset.map(function=make_map_fn('train', data_source), with_indices=True)
+    val_dataset = val_dataset.map(function=make_map_fn('val', data_source), with_indices=True)
+    test_dataset = test_dataset.map(function=make_map_fn('test', data_source), with_indices=True)
 
     # # shuffle the dataset
-    # train_dataset = train_dataset.shuffle(seed=42)
+    train_dataset = train_dataset.shuffle(seed=42)
 
-    # # concatenate val_1 and val_2
-    # val_dataset = concatenate_datasets([val_1_dataset, val_2_dataset])
+    # concatenate val_1 and val_2
+    val_dataset = concatenate_datasets([val_dataset, test_dataset])
     
     threshold = 256
     
@@ -114,12 +122,12 @@ if __name__ == '__main__':
     
         return train_dataset
     
-    # train_dataset = truncate(train_dataset, threshold=threshold)
+    train_dataset = truncate(train_dataset, threshold=threshold)
 
     hdfs_dir = os.path.join(args.hdfs_dir, args.template_type) if args.hdfs_dir is not None else None
 
-    # train_dataset.to_parquet(os.path.join(save_dir, 'train.parquet'))
-    # val_dataset.to_parquet(os.path.join(save_dir, 'val.parquet'))
+    train_dataset.to_parquet(os.path.join(save_dir, 'train.parquet'))
+    val_dataset.to_parquet(os.path.join(save_dir, 'val.parquet'))
     test_dataset.to_parquet(os.path.join(save_dir, 'test.parquet'))
     
     if hdfs_dir is not None:
