@@ -127,15 +127,15 @@ def retriver_items(query, top_k=3000, threads=16):
     results = search_system.batch_search([query], top_k=top_k, threads=threads)
     return results
     
-def calculate_answer_score(json_str, label, do_print=False):
+def calculate_answer_score(json_str, label, top_k):
     """Calculate answer score based on final_prediction idx."""
     try:
         data = json.loads(json_str)
         query = data['query']
         target = label
-        results = retriver_items(query, top_k=3000, threads=32)
+        results = retriver_items(query, top_k=top_k, threads=32)
         asin_results = [item[0] for item in results[query]]
-        answer_score = ndcg_at_k(asin_results, target, 3000)
+        answer_score = ndcg_at_k(asin_results, target, top_k)
 
     except:
         print("[Error] Error in evaluation")
@@ -143,7 +143,7 @@ def calculate_answer_score(json_str, label, do_print=False):
     
     return answer_score
 
-def compute_score(solution_str, ground_truth, format_reward=0.1, answer_reward=1.):
+def compute_score(solution_str, ground_truth, data_source, format_reward=0.1):
     """The scoring function for countdown task.
     
     Args:
@@ -175,9 +175,15 @@ def compute_score(solution_str, ground_truth, format_reward=0.1, answer_reward=1
         print(f"Solution string: {solution_str}")
         print(f"Target: {label} |")
     
+
+    if 'test' in data_source or 'val' in data_source:
+        top_k = 100
+    else:
+        top_k = 1000
+    
     answer_score = 0
     if format_correct and answer_text:
-        answer_score = calculate_answer_score(answer_text, label, do_print)
+        answer_score = calculate_answer_score(answer_text, label, top_k)
 
     if answer_score > 0:
         total_score = format_score + answer_score
@@ -203,6 +209,7 @@ if __name__ == '__main__':
 
     solution_str = """<|im_start|>assistant: Here is the answer to your question: <think> </think> <answer>{"query": "(NOT \\"3-Pack Replacement for Whirlpool\\") AND Amazon home"}</answer>
 """
-    ground_truth = {'target': 'B021E86RPA4'}
+    ground_truth = {'target': 'B00HTQKTGS'}
 
-    score = compute_score(solution_str, ground_truth)
+    score = compute_score(solution_str, ground_truth, 'amazon_c4_train', format_reward=0.1)
+    print(score)

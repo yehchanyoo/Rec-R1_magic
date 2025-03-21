@@ -17,6 +17,7 @@ exp_logs
 *.key
 database
 raw
+SimCSE
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
