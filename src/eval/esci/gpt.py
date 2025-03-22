@@ -44,8 +44,8 @@ if __name__ == '__main__':
     output_dict = {}
 
     # read the existing output file
-    if os.path.exists(os.path.join(args.save_dir, f'{args.model_name}_{args.dataset}_{args.domain_name}.json')):
-        with open(os.path.join(args.save_dir, f'{args.model_name}_{args.dataset}_{args.domain_name}.json'), 'r') as f:
+    if os.path.exists(os.path.join(args.save_dir, f'{args.model_name}-{args.dataset}_{args.domain_name}.json')):
+        with open(os.path.join(args.save_dir, f'{args.model_name}-{args.dataset}_{args.domain_name}.json'), 'r') as f:
             output_dict = json.load(f)
     
 
@@ -85,10 +85,10 @@ if __name__ == '__main__':
         }
         
         if i % 100 == 0:
-            with open(os.path.join(args.save_dir, f'{args.model_name}_{args.dataset}_{args.domain_name}.json'), 'w') as f:
+            with open(os.path.join(args.save_dir, f'{args.model_name}-{args.dataset}_{args.domain_name}.json'), 'w') as f:
                 json.dump(output_dict, f, indent=4)
 
         i += 1
     
-    with open(os.path.join(args.save_dir, f'{args.model_name}_{args.dataset}_{args.domain_name}.json'), 'w') as f:
+    with open(os.path.join(args.save_dir, f'{args.model_name}-{args.dataset}_{args.domain_name}.json'), 'w') as f:
         json.dump(output_dict, f, indent=4)

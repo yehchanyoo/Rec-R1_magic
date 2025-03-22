@@ -12,26 +12,7 @@ from src.eval_search.utils import ndcg_at_k
 from src.Lucene.amazon_c4.search import PyseriniMultiFieldSearch
 
 
-def extract_answer(generated_text):
-    # extract from \nAssistant:
-    # try:
-    #     generated_text = generated_text.split("\nAssistant:")[1]
-    # except:
-    #     generated_text = generated_text.split("\nassistant:")[1]
-    
-    # findall <answer> </answer>
-    answer_pattern = r'<answer>(.*?)</answer>'
-    matches = re.findall(answer_pattern, generated_text, re.DOTALL)  # Use re.DOTALL to match multiline content
-
-    if len(matches) > 0:
-        generated_text = matches[-1]
-        try:
-            # json.loads(generated_text)
-            generated_text = json.loads(generated_text)['query']
-        except:
-            generated_text = matches[-1]
-
-    return generated_text
+from src.eval_search.utils import extract_answer
 
 
 if __name__ == '__main__':

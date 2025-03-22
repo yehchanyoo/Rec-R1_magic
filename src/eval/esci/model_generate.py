@@ -23,7 +23,6 @@ def evaluate_model(model, tokenizer, data_path, device, model_name, save_dir, do
 
     # only keep those ['data_source] contains domain_name, keep index unchanged
     df = df[df['data_source'].str.contains(domain_name, case=False, na=False)]
-
     inputs = [item[0]['content'] for item in df['prompt'].tolist()]
     targets = df['item_id'].tolist()
     qids = df.index.tolist()

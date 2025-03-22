@@ -1,0 +1,6 @@
+{
+    "150": {
+        "generated_text": "<think>\nThe original query is looking for specific products: cups with a cap and straw suitable for a young child who cannot drink from an open cup. The key characteristics needed are:\n1. Suitable for young children.\n2. Easy to clean.\n3. Good suction with the straw.\n\nTo expand the query, we can add terms that are commonly associated with these types of cups, such as \"sippy cups,\" \"spill-proof,\" \"toddler-friendly,\" and \"BPA-free.\"\n\nThe expanded query will help in retrieving more relevant products by including terms that manufacturers and retailers might use to describe these products.\n</think>\n\n<answer>\n{\n    \"query\": \"I need cups with a cap and straw that are perfect for my little one who can't drink from an open cup yet. They should be easy to clean and have a good suction with the straw. toddler-friendly, sippy cups, spill-proof, BPA-free\"\n}\n</answer>",
+        "target": "B09ZZZKT32"
+    }
+}

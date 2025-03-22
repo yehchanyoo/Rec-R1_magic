@@ -9,12 +9,15 @@ from src.Dense.esci.search import FaissHNSWSearcher
 from src.Lucene.utils import ndcg_at_k
 import argparse
 
+from src.eval_search.utils import extract_answer
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', type=str, choices=['roberta-base', 'blair-base', 'blair-large', 'roberta-large', 'simcse-base', 'simcse-large'], default='roberta-base')
     parser.add_argument('--domain', type=str, choices=['Video_Games', 'Baby_Products', 'Office_Products', 'Sports_and_Outdoors'], default='Video_Games')
-    parser.add_argument('--test_data_dir', type=str, default='data/esci/test_subset')
+    parser.add_argument('--test_data_dir', type=str, default=None)
+    parser.add_argument('--test_file_path', type=str, default=None)
     args = parser.parse_args()
     
 
@@ -50,18 +53,33 @@ if __name__ == '__main__':
                                  index_path=index_path, 
                                  doc_ids_path=doc_ids_path)
     
-    # Load the test data
-    test_data_path = os.path.join(args.test_data_dir, f"{args.domain}.json")
-    with open(test_data_path, "r") as f:
-        raw_test_data = json.load(f)
     
+    if args.test_data_dir is not None:
+        # Load the test data
+        test_data_path = os.path.join(args.test_data_dir, f"{args.domain}.json")
+        with open(test_data_path, "r") as f:
+            raw_test_data = json.load(f)
+        
 
-    test_data = []
-    for entry in raw_test_data:
-        query = entry['query']
-        target = entry['item_id']
-        scores = [1] * len(target)
-        test_data.append({'query': query, 'target': target, 'scores': scores})
+        test_data = []
+        for entry in raw_test_data:
+            query = entry['query']
+            target = entry['item_id']
+            scores = [1] * len(target)
+            test_data.append({'query': query, 'target': target, 'scores': scores})
+    elif args.test_file_path is not None:
+        with open(args.test_file_path, "r") as f:
+            raw_test_data = json.load(f)
+        
+        test_data = []
+        for _, entry in raw_test_data.items():
+            query = extract_answer(str(entry['generated_text']))
+            target = eval(entry['target'])
+            scores = [1] * len(target)
+            test_data.append({'query': query, 'target': target, 'scores': scores})
+    else:
+        raise ValueError("Either test_data_dir or test_file_path must be provided")
+
 
     ndcg = []
     batch_size = 32
