@@ -54,26 +54,26 @@ class FaissHNSWSearcher:
             embedding = outputs.last_hidden_state[:, 0, :]  # CLS token embedding
         return embedding.cpu().numpy()
     
-    def search(self, query, top_k=5, threads=8):
-        """
-        Perform a search using the FAISS HNSW index.
+    # def search(self, query, top_k=5, threads=8):
+    #     """
+    #     Perform a search using the FAISS HNSW index.
         
-        :param query: Input query string.
-        :param top_k: Number of nearest neighbors to retrieve.
-        :return: List of (doc_id, similarity_score) tuples.
-        """
-        query_embedding = self.get_dense_embedding(query).astype(np.float32)
+    #     :param query: Input query string.
+    #     :param top_k: Number of nearest neighbors to retrieve.
+    #     :return: List of (doc_id, similarity_score) tuples.
+    #     """
+    #     query_embedding = self.get_dense_embedding(query).astype(np.float32)
         
-        # Normalize for cosine similarity
-        faiss.normalize_L2(query_embedding)
+    #     # Normalize for cosine similarity
+    #     faiss.normalize_L2(query_embedding)
 
-        faiss.omp_set_num_threads(threads)
+    #     faiss.omp_set_num_threads(threads)
         
-        D, I = self.index.search(query_embedding, top_k)  # D = similarity scores, I = doc indices
+    #     D, I = self.index.search(query_embedding, top_k)  # D = similarity scores, I = doc indices
         
-        # Retrieve document IDs
-        results = [(self.doc_ids[idx], D[0][i]) for i, idx in enumerate(I[0])]
-        return results
+    #     # Retrieve document IDs
+    #     results = [(self.doc_ids[idx], D[0][i]) for i, idx in enumerate(I[0])]
+    #     return results
 
 
     def batch_search(self, queries, top_k=5, threads=8):

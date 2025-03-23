@@ -10,7 +10,11 @@ sys.path.append('./')
 
 from src.Lucene.amazon_c4.search import PyseriniMultiFieldSearch
 
-search_system = PyseriniMultiFieldSearch(index_dir="database/amazon_c4/pyserini_index")
+if not os.path.exists("database/amazon_c4/pyserini_index"):
+    print("[Warning] Pyserini index not found for amazon_c4")
+    search_system = None
+else:
+    search_system = PyseriniMultiFieldSearch(index_dir="database/amazon_c4/pyserini_index")
 
 def dcg_at_k(retrieved, target, k):
     """
@@ -210,6 +214,6 @@ if __name__ == '__main__':
     solution_str = """<|im_start|>assistant: Here is the answer to your question: <think> </think> <answer>{"query": "(NOT \\"3-Pack Replacement for Whirlpool\\") AND Amazon home"}</answer>
 """
     ground_truth = {'target': 'B00HTQKTGS'}
-
+    
     score = compute_score(solution_str, ground_truth, 'amazon_c4_train', format_reward=0.1)
     print(score)

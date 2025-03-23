@@ -17,15 +17,24 @@ Note that we don't combine the main with ray_trainer as ray_trainer is used by o
 
 from verl import DataProto
 import torch
-from verl.utils.reward_score import amazon_review, amazon_c4, esci
 from verl.trainer.ppo.ray_trainer import RayPPOTrainer
 
 
 def _select_rm_score_fn(data_source):
     if "amazon_c4" in data_source:
-        return amazon_c4.compute_score
+        if 'dense' in data_source:
+            from verl.utils.reward_score_dense import amazon_c4
+            return amazon_c4.compute_score
+        else:
+            from verl.utils.reward_score import amazon_c4
+            return amazon_c4.compute_score
     elif "esci" in data_source:
-        return esci.compute_score
+        if 'dense' in data_source:
+            from verl.utils.reward_score_dense import esci
+            return esci.compute_score
+        else:
+            from verl.utils.reward_score import esci
+            return esci.compute_score
     else:
         raise NotImplementedError
 

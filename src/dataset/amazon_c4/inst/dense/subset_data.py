@@ -17,10 +17,13 @@ import pdb
 import csv
 
 
+PROMPT = """You are an expert in query rewriting for dense retrieval systems. Given a user query, your task is to enhance it by adding semantically rich and relevant context—such as but not limited to potential user intent, related product attributes, or synonymous terms—to maximize the recall of relevant items during retrieval. Preserve the original meaning of the query and avoid introducing irrelevant content.
+# Below is the query:
+# ```{user_query}```"""
 
-PROMPT = """You are an expert in generating queries for dense retrieval. Given a customer query, your task is to retain the original query while expanding it with additional semantically relevant information, retrieve the most relevant products, ensuring they best meet customer needs. If no useful expansion is needed, return the original query as is.
-Below is the query:
-```{user_query}```"""
+# PROMPT = """You are an expert in generating queries for dense retrieval. Given a customer query, your task is to retain the original query while expanding it with additional semantically relevant information, retrieve the most relevant products, ensuring they best meet customer needs. If no useful expansion is needed, return the original query as is.
+# Below is the query:
+# ```{user_query}```"""
 
 def make_prefix(dp):
     input_str = PROMPT.format(user_query=dp['query'])
