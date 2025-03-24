@@ -5,7 +5,7 @@ SAVE_DIR=results_dense/amazon_c4
 MODEL_NAME=Qwen-inst-amazon-c4
 
 
-CUDA_VISIBLE_DEVICES=0 python src/eval/amazon_c4/model_generate.py \
+CUDA_VISIBLE_DEVICES=3 python src/eval/amazon_c4/model_generate.py \
     --domain_name $DOMAIN_NAME \
     --model_path $MODEL_PATH \
     --data_path $DATA_PATH \

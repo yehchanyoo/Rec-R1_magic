@@ -275,7 +275,7 @@ def compute_reward_metrics(batch):
     
     # avg value of reward > format_score
     ndcg_at_3000 = (torch.sum(reward_tensor[reward_tensor > format_score] - format_score).float()) / reward_tensor.numel()
-    reward_metrics["reward/ndcg_at_3000"] = ndcg_at_3000
+    reward_metrics["reward/ndcg"] = ndcg_at_3000
     
     return reward_metrics
 

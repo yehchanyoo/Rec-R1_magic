@@ -31,7 +31,7 @@ def ndcg_at_k(retrieved, target, k, rel_scores=None):
 
 def recall_at_k(retrieved_list, target_list, k):
     if not target_list:
-        return 0.0  # 避免除以 0
+        return 0.0
 
     top_k = retrieved_list[:k]
     retrieved_relevant = set(top_k) & set(target_list)

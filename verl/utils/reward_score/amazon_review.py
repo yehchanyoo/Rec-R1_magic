@@ -5,6 +5,7 @@ import ast
 import operator
 import pdb
 import json
+from collections import defaultdict
 import sys
 sys.path.append('./')
 
@@ -42,6 +43,14 @@ def ndcg_at_k(retrieved, target, k):
     ideal_dcg = dcg_at_k([target], target, k)  # Ideal DCG: only the target at top
     return dcg / ideal_dcg if ideal_dcg > 0 else 0.0
 
+def recall_at_k(retrieved_list, target_list, k):
+    if not target_list:
+        return 0.0 
+
+    top_k = retrieved_list[:k]
+    retrieved_relevant = set(top_k) & set(target_list)
+    recall = len(retrieved_relevant) / len(set(target_list))
+    return recall
 
 def extract_solution(solution_str):
     """Extract the equation from the solution string."""
@@ -135,20 +144,20 @@ def check_json_format(json_str, do_print=False):
             print("[Error] JSON decoding failed")
         return False
 
-def retriver_items(query, top_k=3000, threads=16):
+def retriver_items(query, domain_name, top_k=3000, threads=16):
     """Retrieve items from the search system."""
-    results = search_system.batch_search([query], top_k=top_k, threads=threads)
+    results = search_system_dict[domain_name].batch_search([query], top_k=top_k, threads=threads)
     return results
     
-def calculate_answer_score(json_str, label, do_print=False):
+def calculate_answer_score(json_str, label, topk, domain_name):
     """Calculate answer score based on final_prediction idx."""
     try:
         data = json.loads(json_str)
         query = data['query']
         target = label
-        results = retriver_items(query, top_k=3000, threads=32)
+        results = retriver_items(query, domain_name, top_k=topk, threads=32)
         asin_results = [item[0] for item in results[query]]
-        answer_score = ndcg_at_k(asin_results, target, 3000)
+        answer_score = ndcg_at_k(asin_results, target, topk)
 
     except:
         print("[Error] Error in evaluation")
@@ -156,7 +165,29 @@ def calculate_answer_score(json_str, label, do_print=False):
     
     return answer_score
 
-def compute_score(solution_str, ground_truth, format_reward=0.1, answer_reward=1.):
+
+# def calculate_val_answer_score(json_str, label, topks, domain_name):
+#     """Calculate answer score based on final_prediction idx."""
+#     ndcg_dict = defaultdict()
+#     recall_dict = defaultdict()
+
+#     try:
+#         data = json.loads(json_str)
+#         query = data['query']
+#         target = label
+#         results = retriver_items(query, domain_name, top_k=max(topks), threads=32)
+#         asin_results = [item[0] for item in results[query]]
+
+#         for topk in topks:
+#             ndcg_dict[topk] = ndcg_at_k(asin_results, target, topk)
+#             recall_dict[topk] = recall_at_k(asin_results, [target], topk)
+        
+#     except:
+#         print("[Error] Error in evaluation")
+    
+#     return ndcg_dict, recall_dict
+
+def compute_score(solution_str, ground_truth, data_source, format_reward=0.1):
     """The scoring function for countdown task.
     
     Args:
@@ -187,10 +218,23 @@ def compute_score(solution_str, ground_truth, format_reward=0.1, answer_reward=1
         print(f"--------------------------------")
         print(f"Solution string: {solution_str}")
         print(f"Target: {label} |")
+
+    if 'All_Beauty' in data_source:
+        domain_name = 'All_Beauty'
+    elif 'Video_Games' in data_source:
+        domain_name = 'Video_Games'
+    elif 'Baby_Products' in data_source:
+        domain_name = 'Baby_Products'
+
     
+    if 'test' in data_source or 'val' in data_source:
+        top_k = 50
+    else:
+        top_k = 5000
+
     answer_score = 0
     if format_correct and answer_text:
-        answer_score = calculate_answer_score(answer_text, label, do_print)
+        answer_score = calculate_answer_score(answer_text, label, top_k, domain_name)
 
     if answer_score > 0:
         total_score = format_score + answer_score

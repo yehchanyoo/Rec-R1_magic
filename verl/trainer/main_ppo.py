@@ -35,6 +35,9 @@ def _select_rm_score_fn(data_source):
         else:
             from verl.utils.reward_score import esci
             return esci.compute_score
+    elif 'amazon_review' in data_source:
+        from verl.utils.reward_score import amazon_review
+        return amazon_review.compute_score
     else:
         raise NotImplementedError
 
