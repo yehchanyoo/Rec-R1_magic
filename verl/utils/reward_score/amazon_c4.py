@@ -6,6 +6,7 @@ import operator
 import pdb
 import json
 import sys
+import os
 sys.path.append('./')
 
 from src.Lucene.amazon_c4.search import PyseriniMultiFieldSearch

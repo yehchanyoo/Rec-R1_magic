@@ -10,7 +10,20 @@ sys.path.append('./')
 
 from src.Lucene.amazon_review.search import PyseriniMultiFieldSearch
 
-search_system = PyseriniMultiFieldSearch(index_dir="database/pyserini_index")
+index_dir_dict = {
+    'All_Beauty': 'database/amazon_review/All_Beauty/pyserini_index',
+    'Baby_Products': 'database/amazon_review/Baby_Products/pyserini_index',
+    'Video_Games': 'database/amazon_review/Video_Games/pyserini_index'
+}
+try:
+    search_system_dict = {
+        'All_Beauty': PyseriniMultiFieldSearch(index_dir=index_dir_dict['All_Beauty']),
+        'Baby_Products': PyseriniMultiFieldSearch(index_dir=index_dir_dict['Baby_Products']),
+        'Video_Games': PyseriniMultiFieldSearch(index_dir=index_dir_dict['Video_Games'])
+    }
+except Exception as e:
+    print(e)
+    print('Please build the index first:')
 
 def dcg_at_k(retrieved, target, k):
     """

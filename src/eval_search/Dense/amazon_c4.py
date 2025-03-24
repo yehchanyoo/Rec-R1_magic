@@ -14,13 +14,13 @@ from src.eval_search.utils import extract_answer
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_name', type=str, choices=['blair-base', 'blair-large'], default='blair-base')
+    parser.add_argument('--model_name', type=str, choices=['roberta-base', 'blair-base', 'blair-large', 'roberta-large', 'simcse-base', 'simcse-large'], default='blair-base')
     parser.add_argument('--domain', type=str, choices=['Video_Games', 'Baby', 'Office', 'Sports'], default='Video_Games')
     parser.add_argument('--test_data_dir', type=str, default=None)
     parser.add_argument('--test_file_path', type=str, default=None)
     args = parser.parse_args()
     
-
+    
     if args.model_name == 'blair-base':
         model_path = "hyp1231/blair-roberta-base"
         index_path = f"data/amazon_c4/raw/dense_index/blair-base/faiss_hnsw_index.bin"
@@ -29,6 +29,23 @@ if __name__ == '__main__':
         model_path = "hyp1231/blair-roberta-large"
         index_path = f"data/amazon_c4/raw/dense_index/blair-large/faiss_hnsw_index.bin"
         doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+    elif args.model_name == 'roberta-base':
+        model_path = "FacebookAI/roberta-base"
+        index_path = f"data/amazon_c4/raw/dense_index/roberta-base/faiss_hnsw_index.bin"
+        doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+    elif args.model_name == 'roberta-large':
+        model_path = "FacebookAI/roberta-large"
+        index_path = f"data/amazon_c4/raw/dense_index/roberta-large/faiss_hnsw_index.bin"
+        doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+    elif args.model_name == 'simcse-base':
+        model_path = 'princeton-nlp/sup-simcse-roberta-base'
+        index_path = f"data/amazon_c4/raw/dense_index/simcse-base/faiss_hnsw_index.bin"
+        doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+    elif args.model_name == 'simcse-large':
+        model_path = 'princeton-nlp/sup-simcse-roberta-large'
+        index_path = f"data/amazon_c4/raw/dense_index/simcse-large/faiss_hnsw_index.bin"
+        doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+
     else:
         raise NotImplementedError('Model not supported')
 
@@ -40,7 +57,7 @@ if __name__ == '__main__':
     
     if args.test_data_dir is not None:
         # Load the test data
-        test_data_path = os.path.join(args.test_data_dir, f"{args.domain}.json")
+        test_data_path = os.path.join(args.test_data_dir, f"{args.domain}", 'test.json')
         with open(test_data_path, "r") as f:
             raw_test_data = json.load(f)
         
@@ -48,7 +65,8 @@ if __name__ == '__main__':
         test_data = []
         for entry in raw_test_data:
             query = entry['query']
-            target = entry['item_id']
+            # query = entry['ori_review']
+            target = [entry['item_id']]
             scores = [1] * len(target)
             test_data.append({'query': query, 'target': target, 'scores': scores})
     elif args.test_file_path is not None:

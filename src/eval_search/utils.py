@@ -29,6 +29,15 @@ def ndcg_at_k(retrieved, target, k, rel_scores=None):
     return dcg / ideal_dcg if ideal_dcg > 0 else 0.0
 
 
+def recall_at_k(retrieved_list, target_list, k):
+    if not target_list:
+        return 0.0  # 避免除以 0
+
+    top_k = retrieved_list[:k]
+    retrieved_relevant = set(top_k) & set(target_list)
+    recall = len(retrieved_relevant) / len(set(target_list))
+    return recall
+
 def extract_answer(generated_text):
     # extract from \nAssistant:
     # try:

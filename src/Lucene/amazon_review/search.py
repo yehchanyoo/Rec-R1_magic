@@ -43,7 +43,7 @@ class PyseriniMultiFieldSearch:
         # ]
         # contents
         field_queries = [
-            f"(contents:{query}) OR (title:{query}) OR (store:{query}) OR (details:{query}) OR (main_category:{query}) OR (description:{query}) OR (features:{query}) OR (categories:{query}) OR (average_rating:{query})"
+            f"(contents:{query})"
             for query in queries
         ]
         
@@ -60,16 +60,17 @@ class PyseriniMultiFieldSearch:
         for i, query in enumerate(queries):
             hits = results_dict[str(i)]  # Get results for query `i`
             formatted_results = [
-                (json.loads(hit.raw)["id"], json.loads(hit.raw)["title"], json.loads(hit.raw)["main_category"], hit.score)
+                (json.loads(hit.raw)["id"], json.loads(hit.raw)["contents"], hit.score)
                 for hit in hits
             ]
             final_results[query] = formatted_results
 
         return final_results
 
+
 # Example Usage
 if __name__ == "__main__":
-    search_system = PyseriniMultiFieldSearch(index_dir='database/pyserini_index')
+    search_system = PyseriniMultiFieldSearch(index_dir='database/amazon_review/All_Beauty/pyserini_index')
     
     # Execute a search
     # query = "3-Pack Replacement for Whirlpool AND Amazon home"
@@ -80,7 +81,7 @@ if __name__ == "__main__":
     #     print(f"ASIN: {asin}, Title: {title}, Score: {score}")
     
     queries = [
-        "3-Pack Replacement for Whirlpool AND Amazon home AND Rating: 4.5",
+        "DKAF 5Pcs Professional Salon Hair Coloring Dyeing Kit",
         # "Leather Conditioner for Shoes OR Furniture",
         # "Organic Skin Care AND Vegan Moisturizer",
     ]
@@ -88,10 +89,10 @@ if __name__ == "__main__":
     # queries = queries * 100  # Repeat queries for batch
     
     tic = time.time()
-    search_results = search_system.batch_search(queries, top_k=10, threads=32)
+    search_results = search_system.batch_search(queries, top_k=3, threads=32)
     print(f"Search time: {time.time() - tic:.2f}s")
     # Print results
     for query, results in search_results.items():
-        print(f"\n🔍 Query: {query}")
-        for asin, title, main_categary, score in results:
-            print(f"  ASIN: {asin}, Title: {title}, Main categary: {main_categary}, Score: {score}")
+        # print(f"\n🔍 Query: {query}")
+        for asin, content, score in results:
+            print(f"  ASIN: {asin}, Content: {content}, Score: {score}")

@@ -44,12 +44,23 @@ if __name__ == '__main__':
     output_dir = "data/amazon_c4/raw/cache/Amazon-C4"
 
     ##### Modify
-    model_name = 'blair-large'
-    embedding_path = f"{output_dir}/Amazon-C4.blair-largeCLS"
+    # model_name = 'blair-large'
+    # embedding_path = f"{output_dir}/Amazon-C4.blair-largeCLS"
 
     # model_name = 'blair-base'
     # embedding_path = f"{output_dir}/Amazon-C4.blair-baseCLS"
+
+    # model_name = 'roberta-large'
+    # embedding_path = f"{output_dir}/Amazon-C4.roberta-largeCLS"
     
+    # model_name = 'roberta-base'
+    # embedding_path = f"{output_dir}/Amazon-C4.roberta-baseCLS"
+
+    # model_name = 'simcse-large'
+    # embedding_path = f"{output_dir}/Amazon-C4.simcse-largeCLS"
+
+    model_name = 'simcse-base'
+    embedding_path = f"{output_dir}/Amazon-C4.simcse-baseCLS"
 
     save_dir = f'data/amazon_c4/raw/dense_index/{model_name}'
     os.makedirs(save_dir, exist_ok=True)

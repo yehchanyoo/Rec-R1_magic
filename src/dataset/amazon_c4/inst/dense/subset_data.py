@@ -17,8 +17,8 @@ import pdb
 import csv
 
 
-PROMPT = """You are an expert in query rewriting for dense retrieval systems. Given a user query, your task is to enhance it by adding semantically rich and relevant context—such as but not limited to potential user intent, related product attributes, or synonymous terms—to maximize the recall of relevant items during retrieval. Preserve the original meaning of the query and avoid introducing irrelevant content.
-# Below is the query:
+PROMPT = """You are an expert in query rewriting for dense retrieval systems. Rewrite the following product search query as if you are a real customer writing a natural, authentic review after using the product. Maintain the meaning and details of the original query, but shift the tone to be more casual, emotional, and based on personal experience. Include specific comments about product performance that match the query's intent.
+# Below is the product search query:
 # ```{user_query}```"""
 
 # PROMPT = """You are an expert in generating queries for dense retrieval. Given a customer query, your task is to retain the original query while expanding it with additional semantically relevant information, retrieve the most relevant products, ensuring they best meet customer needs. If no useful expansion is needed, return the original query as is.
@@ -134,23 +134,27 @@ if __name__ == '__main__':
     
     threshold = 256
     
-    def truncate(train_dataset, threshold):
-        count = 0
-        # for those that are exceeding the threshold, we can delete the text between "\nTitle:" to "\nInclusion criteria:"
-        for i, d in enumerate(train_dataset):
-            if len(d['prompt'][0]['content'].split()) > threshold:
-                text = d['prompt'][0]['content']
-                count += 1
-                words = text.split()
-                truncate_length = max(threshold - 200, 0)  # Ensure we don't end up with a negative index
-                text = ' '.join(words[-truncate_length:])
-                train_dataset[i]['prompt'][0]['content'] = text
+    # def truncate(train_dataset, threshold):
+    #     count = 0
+    #     # for those that are exceeding the threshold, we can delete the text between "\nTitle:" to "\nInclusion criteria:"
+    #     for i, d in enumerate(train_dataset):
+    #         if len(d['prompt'][0]['content'].split()) > threshold:
+    #             text = d['prompt'][0]['content']
+    #             count += 1
+    #             words = text.split()
+    #             truncate_length = max(threshold - 200, 0)  # Ensure we don't end up with a negative index
+    #             text = ' '.join(words[-truncate_length:])
+    #             train_dataset[i]['prompt'][0]['content'] = text
 
-        print(f"Truncated {count} examples")
+    #     print(f"Truncated {count} examples")
         
-        return train_dataset
+    #     return train_dataset
     
-    train_dataset = truncate(train_dataset, threshold=threshold)
+    # train_dataset = truncate(train_dataset, threshold=threshold)
+    # remove the data that is more than 300 words
+    original_len = len(train_dataset)
+    train_dataset = train_dataset.filter(lambda x: len(x['prompt'][0]['content'].split()) < threshold)
+    print(f"Removed {original_len - len(train_dataset)} examples")
 
     hdfs_dir = os.path.join(args.hdfs_dir, args.template_type) if args.hdfs_dir is not None else None
 
