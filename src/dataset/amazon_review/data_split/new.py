@@ -13,9 +13,9 @@ output_dir = 'data/amazon_review/processed_filtered'
 for domain in domain_list:
     # Define input and output directories
     input_dir = os.path.join(ori_file_dir, domain)
-    output_dir_base = os.path.join(output_dir, domain)
-    transductive_dir = os.path.join(output_dir_base, 'transductive')
-    inductive_dir = os.path.join(output_dir_base, 'inductive')
+    output_dir_base = output_dir
+    transductive_dir = os.path.join(output_dir_base, 'transductive', domain)
+    inductive_dir = os.path.join(output_dir_base, 'inductive', domain)
     os.makedirs(transductive_dir, exist_ok=True)
     os.makedirs(inductive_dir, exist_ok=True)
 
@@ -23,7 +23,7 @@ for domain in domain_list:
     def load_data(filename):
         path = os.path.join(input_dir, filename)
         df = pd.read_csv(path, sep='\t', header=None, names=['user_id:token', 'item_id_list:token_seq', 'item_id:token'])
-        df = df[df['item_id_list:token_seq'].apply(lambda x: len(str(x).split()) <= 10)]
+        # df = df[df['item_id_list:token_seq'].apply(lambda x: len(str(x).split()) <= 10)]
         return df
 
     # Load datasets
@@ -40,7 +40,7 @@ for domain in domain_list:
         transductive = df[df['user_id:token'].isin(train_users)].sample(n=total // 2, random_state=42)
         inductive = df[~df['user_id:token'].isin(train_users)].sample(n=total // 2, random_state=42)
         return transductive, inductive
-
+    
     # Split validation and test datasets
     valid_trans, valid_ind = split_transductive_inductive(valid_df, 1000)
     test_trans, test_ind = split_transductive_inductive(test_df, 1000)
