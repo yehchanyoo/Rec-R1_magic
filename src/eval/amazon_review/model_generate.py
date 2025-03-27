@@ -80,7 +80,8 @@ def evaluate_model(model, tokenizer, data_path, device, model_name, save_dir, do
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--domain_name', type=str, choices=['Video_Games', 'Baby_Products', 'All_Beauty'], default='Video_Games')
+    # parser.add_argument('--domain_name', type=str, choices=['Video_Games', 'Baby_Products', 'All_Beauty'], default='Video_Games')
+    parser.add_argument('--domain_name', type=str)
     parser.add_argument("--model_path", type=str, default="Qwen/Qwen2.5-3B-Instruct")
     parser.add_argument("--data_path", type=str, default="data/amazon_c4/inst/dense/subset_other/test.parquet")
     parser.add_argument("--model_name", type=str, default="Qwen-inst-amazon-c4")

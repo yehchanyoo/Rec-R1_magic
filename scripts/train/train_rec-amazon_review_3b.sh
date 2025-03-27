@@ -36,7 +36,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.n_gpus_per_node=$N_GPUS \
     trainer.nnodes=1 \
     trainer.save_freq=100 \
-    trainer.test_freq=20 \
+    trainer.test_freq=10 \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.total_epochs=50 2>&1 | tee exp_log/$EXPERIMENT_NAME-grpo-verl_2gpus_$DATE.log

@@ -5,7 +5,7 @@ SAVE_DIR=results/amazon_review
 MODEL_NAME=Qwen-inst-amazon-review
 
 
-CUDA_VISIBLE_DEVICES=0 python src/eval/amazon_review/model_generate.py \
+CUDA_VISIBLE_DEVICES=6 python src/eval/amazon_review/model_generate.py \
     --domain_name $DOMAIN_NAME \
     --model_path $MODEL_PATH \
     --data_path $DATA_PATH \

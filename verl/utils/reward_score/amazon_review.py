@@ -19,8 +19,8 @@ index_dir_dict = {
 try:
     search_system_dict = {
         'All_Beauty': PyseriniMultiFieldSearch(index_dir=index_dir_dict['All_Beauty']),
-        'Baby_Products': PyseriniMultiFieldSearch(index_dir=index_dir_dict['Baby_Products']),
-        'Video_Games': PyseriniMultiFieldSearch(index_dir=index_dir_dict['Video_Games'])
+        # 'Baby_Products': PyseriniMultiFieldSearch(index_dir=index_dir_dict['Baby_Products']),
+        # 'Video_Games': PyseriniMultiFieldSearch(index_dir=index_dir_dict['Video_Games'])
     }
 except Exception as e:
     print(e)
@@ -221,10 +221,10 @@ def compute_score(solution_str, ground_truth, data_source, format_reward=0.1):
 
     if 'All_Beauty' in data_source:
         domain_name = 'All_Beauty'
-    elif 'Video_Games' in data_source:
-        domain_name = 'Video_Games'
-    elif 'Baby_Products' in data_source:
-        domain_name = 'Baby_Products'
+    # elif 'Video_Games' in data_source:
+    #     domain_name = 'Video_Games'
+    # elif 'Baby_Products' in data_source:
+    #     domain_name = 'Baby_Products'
 
     
     if 'test' in data_source or 'val' in data_source:

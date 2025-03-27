@@ -17,7 +17,7 @@ from src.utils.gpt_azure import gpt_chat_4o, gpt_chat_4omini, gpt_chat_35_msg
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--domain_name', type=str, choices=['Video_Games', 'Baby_Products', 'Office_Products', 'Sports_and_Outdoors'], default='Video_Games')
+    parser.add_argument('--domain_name', type=str, choices=['Video_Games', 'Baby_Products', 'Office_Products', 'Sports_and_Outdoors', 'esci'], default='Video_Games')
     parser.add_argument('--model_name', type=str, default='gpt-4o')
     parser.add_argument('--save_dir', type=str, default='results/esci')
     parser.add_argument("--data_path", type=str, default="data/esci/inst/subset/test.parquet")
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     
     df = pd.read_parquet(args.data_path)
     df = df[df['data_source'].str.contains(args.domain_name, case=False, na=False)]
-
+    
     inputs = [item[0]['content'] for item in df['prompt'].tolist()]
     targets = df['item_id'].tolist()
     qids = df.index.tolist()

@@ -39,7 +39,7 @@ def load_rec_dataset(data_dir, setting_list, domain_name, meta_dir='data/amazon_
     test_data_dict = {}
 
     global_item2meta = {}
-
+    
     for setting in setting_list:
         with open(os.path.join(data_dir, setting, domain_name, 'train.json'), 'r') as f:
             train_data_dict[setting] = json.load(f)
@@ -47,7 +47,7 @@ def load_rec_dataset(data_dir, setting_list, domain_name, meta_dir='data/amazon_
             val_data_dict[setting] = json.load(f)
         with open(os.path.join(data_dir, setting, domain_name, 'test.json'), 'r') as f:
             test_data_dict[setting] = json.load(f)
-        item_meta_path = os.path.join(meta_dir, f"{setting}_items_filtered.jsonl")
+        item_meta_path = os.path.join(meta_dir, f"{domain_name}_items_filtered.jsonl")
         with open(item_meta_path, 'r', encoding='utf-8') as f:
             for line in f:
                 line = json.loads(line)
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     
     data_source = f'amazon_review_{args.domain_name}'
     data_source_dict = {ele: f'{data_source}_{ele}' for ele in setting_list}
-    
+
     file_dir = args.local_dir
     save_dir = os.path.join(args.save_dir)
     os.makedirs(save_dir, exist_ok=True)

@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     with open(args.res_path, 'r') as f:
         res_dict = json.load(f)
-
+    
     
     test_data = []
     for _, value_dict in res_dict.items():
