@@ -1,4 +1,4 @@
-# Panacea-R1
+# Rec-R1
 
 ## Installation
 
