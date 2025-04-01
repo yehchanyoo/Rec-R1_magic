@@ -2,6 +2,9 @@
 
 REC-R1 is a general framework that bridges generative large language models (LLMs) and recommendation systems via reinforcement learning. Check the paper [here](https://arxiv.org/pdf/2503.24289).
 
+## News
+[2025/03/31] We release the code and paper. We are running more experiments such as more LLM4Rec tasks and more datasets. **More results are coming!**
+
 <p align="center">
   <img  src="resources/llm4rec.png" />
 </p>
