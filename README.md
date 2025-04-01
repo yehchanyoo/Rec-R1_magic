@@ -1,6 +1,6 @@
 # Rec-R1: Bridging Generative Large Language Models and User-Centric Recommendation Systems via Reinforcement Learning
 
-REC-R1 is a general framework that bridges generative large language models (LLMs) and recommendation systems via reinforcement learning. 
+REC-R1 is a general framework that bridges generative large language models (LLMs) and recommendation systems via reinforcement learning. Check the paper [here](https://arxiv.org/pdf/2503.24289).
 
 <p align="center">
   <img  src="resources/llm4rec.png" />
