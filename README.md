@@ -1,4 +1,9 @@
-# Rec-R1
+
+<p align="center">
+  <img height="150" src="resources/rec-r1.png" />
+</p>
+
+______________________________________________________________________
 
 ## Installation
 
