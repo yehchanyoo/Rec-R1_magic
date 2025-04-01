@@ -1,9 +1,14 @@
+# Rec-R1: Bridging Generative Large Language Models and User-Centric Recommendation Systems via Reinforcement Learning
+
+REC-R1 is a general framework that bridges generative large language models (LLMs) and recommendation systems via reinforcement learning. 
 
 <p align="center">
-  <img height="150" src="resources/rec-r1.png" />
+  <img  src="resources/llm4rec.png" />
 </p>
 
-______________________________________________________________________
+<p align="center">
+  <img  src="resources/rec-r1-compa.png" />
+</p>
 
 ## Installation
 
@@ -68,3 +73,19 @@ export CUDA_VISIBLE_DEVICES=0,1
 
 bash scripts/train_tiny_zero_ppo.sh
 ```
+
+## Citation
+```
+@article{lin2025rec,
+  title={Rec-R1: Bridging Generative Large Language Models and User-Centric Recommendation Systems via Reinforcement Learning},
+  author={Lin, Jiacheng and Wang, Tian and Qian, Kun},
+  journal={arXiv preprint arXiv:2503.24289},
+  year={2025}
+  url={https://arxiv.org/pdf/2503.24289}, 
+}
+```
+
+## Acknowledgements
+- [Verl](https://github.com/volcengine/verl) 🔗
+- [Pyserini](https://github.com/castorini/pyserini) 🔗
+- [Faiss](https://github.com/facebookresearch/faiss) 🔗
