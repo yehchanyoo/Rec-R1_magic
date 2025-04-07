@@ -53,7 +53,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 **Data Preparation**
 ```
 conda activate zero
-python examples/data_preprocess/patient_trial_matching.py
+python src/dataset/amazon_c4/inst/sparse/subset_data.py
 ```
 
 ### Build a Lucene Database
