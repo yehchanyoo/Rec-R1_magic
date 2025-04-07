@@ -80,7 +80,7 @@ export HF_HOME="/srv/local/data/linjc/hub"
 
 export CUDA_VISIBLE_DEVICES=0,1
 
-bash scripts/train_tiny_zero_ppo.sh
+bash scripts/train/train_rec-amazon_c4_3b.sh
 ```
 
 ## Citation
