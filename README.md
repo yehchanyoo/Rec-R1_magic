@@ -38,6 +38,7 @@ pip3 install flash-attn --no-build-isolation
 pip install wandb IPython matplotlib
 
 # lucene supported by pyserini
+conda install -c conda-forge blis # run this line before pyserini
 pip install pyserini
 pip install faiss-gpu
 
