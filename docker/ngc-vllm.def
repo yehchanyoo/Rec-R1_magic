@@ -1,0 +1,38 @@
+Bootstrap: docker
+From: vllm/vllm-openai:latest 
+
+%post
+    # Update pip
+    python3 -m pip install --upgrade pip
+
+   # Install critical packages
+    pip3 install --no-cache-dir ray
+   # Custom Verl install 
+    export MAX_JOBS=4
+    export NINJA_FLAGS="-j4"
+    pip3 install git+https://github.com/yehchanyoo/Rec-R1_magic.git
+   # Install common packages
+    pip3 install --no-cache-dir \
+        accelerate \
+        codetiming \
+        datasets \
+        dill \
+        hydra-core \
+        numpy \
+        pybind11 \
+        tensordict \
+	ipython \
+	matplotlib \
+	seaborn
+
+
+    # Final utilities
+    pip3 install wandb py-spy
+
+    # For pyserini
+    pip3 install --no-cache-dir pyserini
+    pip3 install --no-cache-dir faiss-gpu
+
+%environment
+    export PYTHONUNBUFFERED=1
+
