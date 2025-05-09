@@ -1,18 +1,19 @@
 Bootstrap: docker
-From: vllm/vllm-openai:latest 
+From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
 
 %post
-    # Update pip
-    python3 -m pip install --upgrade pip
+    # Install git
+    apt-get update
+    apt-get install -y git
 
-   # Install critical packages
-    pip3 install --no-cache-dir ray
-   # Custom Verl install 
-    export MAX_JOBS=4
-    export NINJA_FLAGS="-j4"
-    pip3 install git+https://github.com/yehchanyoo/Rec-R1_magic.git
-   # Install common packages
-    pip3 install --no-cache-dir \
+    # Install uv
+    pip3 install --no-cache-dir uv    
+ 
+    # Install critical packages
+    uv pip install --system --no-cache-dir vllm ray
+   
+    # Install common packages
+    uv pip install --system --no-cache-dir \
         accelerate \
         codetiming \
         datasets \
@@ -23,15 +24,23 @@ From: vllm/vllm-openai:latest
         tensordict \
 	ipython \
 	matplotlib \
-	seaborn
+	seaborn \
+	blis
 
 
+    # Custom Verl install 
+    export MAX_JOBS=4
+    export NINJA_FLAGS="-j4"
+    uv pip install --system --no-build-isolation git+https://github.com/yehchanyoo/Rec-R1_magic.git
+    
     # Final utilities
-    pip3 install wandb py-spy
+    uv pip install --system wandb py-spy
 
     # For pyserini
-    pip3 install --no-cache-dir pyserini
-    pip3 install --no-cache-dir faiss-gpu
+    uv pip install --system --no-cache-dir pyserini
+
+    # Install faiss
+    conda install -c pytorch -c nvidia -c rapidsai -c conda-forge libnvjitlink cuda-version=12.4 libcuvs=25.4.0 faiss-gpu-cuvs=1.11.0
 
 %environment
     export PYTHONUNBUFFERED=1
