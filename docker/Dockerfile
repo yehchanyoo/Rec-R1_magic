@@ -50,5 +50,7 @@ RUN conda install -y -c pytorch -c nvidia -c rapidsai -c conda-forge \
 # Install custom Verl package
 ENV MAX_JOBS=4
 ENV NINJA_FLAGS="-j4"
-RUN git clone git@github.com:yehchanyoo/Rec-R1_magic.git
-RUN uv pip install --system --no-build-isolation -e Rec-R1_magic
+RUN git clone https://github.com/yehchanyoo/Rec-R1_magic.git
+WORKDIR /home/rapids/Rec-R1_magic
+RUN uv pip install --system --no-build-isolation -e .
+RUN git remote set-url origin git@github.com:yehchanyoo/Rec-R1_magic.git
