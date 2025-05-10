@@ -16,7 +16,7 @@ USER rapids
 RUN pip3 install --no-cache-dir uv
 
 # Install critical packages
-RUN uv pip install --system --no-cache-dir vllm=0.6.3 ray
+RUN uv pip install --system --no-cache-dir vllm==0.6.3 ray
 
 # Install common packages
 RUN uv pip install --system --no-cache-dir \
