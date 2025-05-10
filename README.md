@@ -58,7 +58,7 @@ python src/dataset/amazon_c4/inst/sparse/subset_data.py
 ```
 
 ### Build a Lucene Database
-See the `src/Lucene/README.md` file.
+See the `src/Lucene/README.md` [file](src/Lucene/README.md).
 
 ### Run Training
 ```

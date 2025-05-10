@@ -37,6 +37,6 @@ python3 -m verl.trainer.main_ppo \
     trainer.nnodes=1 \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
-    trainer.project_name=$PROJECT_NAME \
+    trainer.project_name=adv-ml-project \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.total_epochs=5 2>&1 | tee exp_log/amazon_c4_3b-grpo-verl_2gpus_$DATE.log
