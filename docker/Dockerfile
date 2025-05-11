@@ -1,17 +1,17 @@
+# Issues with blis package below 3.12
 FROM nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
 
-ENV PYTHONUNBUFFERED=1
-ENV DEBIAN_FRONTEND=noninteractive
-
-USER root
-
 # Install git and other system packages
+USER root
 RUN apt-get update && \
-    apt-get install -y git default-jdk default-jre vim && \
+    apt-get install -y build-essential git default-jdk default-jre vim && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 USER rapids
+ENV CC=gcc
+ENV PYTHONUNBUFFERED=1
+ENV DEBIAN_FRONTEND=noninteractive
 # Install uv
 RUN pip3 install --no-cache-dir uv
 
@@ -50,7 +50,8 @@ RUN conda install -y -c pytorch -c nvidia -c rapidsai -c conda-forge \
 # Install custom Verl package
 ENV MAX_JOBS=4
 ENV NINJA_FLAGS="-j4"
-RUN git clone https://github.com/yehchanyoo/Rec-R1_magic.git
+
+# Copy from local
+COPY --chown=rapids:conda Rec-R1_magic /home/rapids/Rec-R1_magic 
 WORKDIR /home/rapids/Rec-R1_magic
 RUN uv pip install --system --no-build-isolation -e .
-RUN git remote set-url origin git@github.com:yehchanyoo/Rec-R1_magic.git
