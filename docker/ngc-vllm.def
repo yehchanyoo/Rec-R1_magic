@@ -8,6 +8,9 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
     export MAX_JOBS=4
     export NINJA_FLAGS="-j4"
 
+%files
+    . /home/rapids/Rec-R1_magic
+
 %post
     echo ">>> Installing system packages..."
     apt-get update && \
@@ -47,13 +50,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
         faiss-gpu-cuvs=1.11.0 && \
     conda clean -afy
 
-%files
-    Rec-R1_magic /home/rapids/Rec-R1_magic
-
-%post
     echo ">>> Installing local Rec-R1_magic package..."
     cd /home/rapids/Rec-R1_magic && \
     uv pip install --system --no-build-isolation -e .
 
-%runscript
-    exec "$@"
