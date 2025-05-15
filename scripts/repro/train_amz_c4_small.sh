@@ -39,7 +39,7 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
     algorithm.kl_ctrl.kl_coef=0.001 \
     trainer.logger=['wandb'] \
-    trainer.val_before_train=False \
+    +trainer.val_before_train=False \
     trainer.default_hdfs_dir=null \
     trainer.n_gpus_per_node=$N_GPUS \
     trainer.nnodes=1 \
