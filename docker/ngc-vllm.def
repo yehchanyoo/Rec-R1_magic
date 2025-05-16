@@ -37,7 +37,8 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
         ipython \
         matplotlib \
         seaborn \
-        blis
+        blis \
+	hf_xet 
 
     echo ">>> Installing utility packages..."
     uv pip install --system --no-cache-dir wandb py-spy pyserini
