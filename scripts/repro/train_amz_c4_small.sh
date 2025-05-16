@@ -1,11 +1,11 @@
-export N_GPUS=1
-export BASE_MODEL=Qwen/Qwen2.5-0.5B-Instruct
+export N_GPUS=2
+export BASE_MODEL=Qwen/Qwen2.5-3B-Instruct
 export DATA_DIR=data/amazon_c4/inst/qwen-instruct
-export ROLLOUT_TP_SIZE=1
-export EXPERIMENT_NAME=matching-qwen2.5-0.5b-inst-ppo
+export ROLLOUT_TP_SIZE=2
+export EXPERIMENT_NAME=matching-qwen2.5-3b-inst-ppo
 export VLLM_ATTENTION_BACKEND=XFORMERS
 export HF_HOME="/home/rapids/.cache/huggingface"
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=0,1
 export PROJECT_NAME="adv-ml-project"
 
 python3 -m verl.trainer.main_ppo \
@@ -22,7 +22,7 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.actor.optim.lr=1e-6 \
     actor_rollout_ref.actor.strategy=fsdp \
     actor_rollout_ref.actor.ppo_mini_batch_size=256 \
-    actor_rollout_ref.actor.ppo_micro_batch_size=1 \
+    actor_rollout_ref.actor.ppo_micro_batch_size=2 \
     actor_rollout_ref.actor.use_kl_loss=True \
     actor_rollout_ref.actor.kl_loss_coef=0.001 \
     actor_rollout_ref.actor.kl_loss_type=low_var_kl \
@@ -30,12 +30,12 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.top_p=0.95 \
     actor_rollout_ref.actor.fsdp_config.grad_offload=True \
     actor_rollout_ref.actor.fsdp_config.optimizer_offload=True \
-    actor_rollout_ref.rollout.log_prob_micro_batch_size=1 \
+    actor_rollout_ref.rollout.log_prob_micro_batch_size=2 \
     actor_rollout_ref.rollout.tensor_model_parallel_size=$ROLLOUT_TP_SIZE \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.3 \
     actor_rollout_ref.rollout.name=vllm \
     actor_rollout_ref.rollout.n=12 \
-    actor_rollout_ref.ref.log_prob_micro_batch_size=1 \
+    actor_rollout_ref.ref.log_prob_micro_batch_size=2 \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
     algorithm.kl_ctrl.kl_coef=0.001 \
     trainer.logger=['wandb'] \
@@ -47,4 +47,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.test_freq=10 \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
-    trainer.total_epochs=5 2>&1 | tee logs/amazon_c4_0.5b-grpo-verl_1gpu_$DATE.log
+    trainer.total_epochs=5 2>&1 | tee logs/amazon_c4_3b-grpo-verl_2gpu_$DATE.log
