@@ -7,6 +7,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
     export DEBIAN_FRONTEND=noninteractive
     export MAX_JOBS=4
     export NINJA_FLAGS="-j4"
+    export HF_HOME="/home/rapids/.cache/huggingface"
 
 %files
     . /home/rapids/Rec-R1_magic
