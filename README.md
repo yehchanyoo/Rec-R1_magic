@@ -1,4 +1,4 @@
-# Rec-R1: Bridging Generative Large Language Models and User-Centric Recommendation Systems via Reinforcement Learning
+# (Replication Project) Rec-R1: Bridging Generative Large Language Models and User-Centric Recommendation Systems via Reinforcement Learning
 
 <p align="center">
   <a href="https://arxiv.org/pdf/2503.24289">
