@@ -6,10 +6,9 @@
   </a>
 </p>
 
-REC-R1 is a general framework that bridges generative large language models (LLMs) and recommendation systems via reinforcement learning. Check the paper [here](https://arxiv.org/pdf/2503.24289).
+This repository is forked from [the original Rec-R1 repository](https://github.com/linjc16/Rec-R1) and is used for the [CSE 493S/599S](https://courses.cs.washington.edu/courses/cse493s/25sp/) final project for the Spring 2025 quarter at the University of Washington. This project is being done by Justin Chae, Thomas Lilly, Johan Lindqvist, and Yehchan Yoo.
 
-## News
-[2025/03/31] We release the code and paper. We are running more experiments such as more LLM4Rec tasks and more datasets. **More results are coming!**
+REC-R1 is a general framework that bridges generative large language models (LLMs) and recommendation systems via reinforcement learning. Check the paper [here](https://arxiv.org/pdf/2503.24289).
 
 <p align="center">
   <img  src="resources/llm4rec.png" />
@@ -82,17 +81,6 @@ export HF_HOME="/srv/local/data/linjc/hub"
 export CUDA_VISIBLE_DEVICES=0,1
 
 bash scripts/train/train_rec-amazon_c4_3b.sh
-```
-
-## Citation
-```
-@article{lin2025rec,
-  title={Rec-R1: Bridging Generative Large Language Models and User-Centric Recommendation Systems via Reinforcement Learning},
-  author={Lin, Jiacheng and Wang, Tian and Qian, Kun},
-  journal={arXiv preprint arXiv:2503.24289},
-  year={2025}
-  url={https://arxiv.org/pdf/2503.24289}, 
-}
 ```
 
 ## Acknowledgements
