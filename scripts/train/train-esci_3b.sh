@@ -1,3 +1,14 @@
+export N_GPUS=2
+export BASE_MODEL=Qwen/Qwen2.5-3B-Instruct
+export DATA_DIR=data/matching/qwen-instruct
+export ROLLOUT_TP_SIZE=2
+export EXPERIMENT_NAME=matching-qwen2.5-3b-inst-ppo
+export VLLM_ATTENTION_BACKEND=XFORMERS
+export WANDB_API_KEY="[Your_key]"
+export HF_HOME="/srv/local/data/linjc/hub"
+
+export CUDA_VISIBLE_DEVICES=0,1
+
 DATE=$(date '+%Y-%m-%d-%H-%M-%S')
 
 python3 -m verl.trainer.main_ppo \
