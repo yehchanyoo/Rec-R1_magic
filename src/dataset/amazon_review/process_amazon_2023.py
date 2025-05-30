@@ -16,7 +16,11 @@ def parse_args():
     parser.add_argument('--max_his_len', type=int, default=50)
     parser.add_argument('--n_workers', type=int, default=16)
     parser.add_argument('--output_dir', type=str, default='data/amazon_review/processed/')
-    parser.add_argument('--device', type=str, default='cuda:3')
+
+    # Changing CUDA argument
+    default_device = "cuda:0" if torch.cuda.is_available() and torch.cuda.device_count() > 0 else "cpu"
+    parser.add_argument('--device', type=str, default=default_device)
+
     parser.add_argument('--plm', type=str, default='hyp1231/blair-roberta-large')
     parser.add_argument('--batch_size', type=int, default=256)
     return parser.parse_args()
