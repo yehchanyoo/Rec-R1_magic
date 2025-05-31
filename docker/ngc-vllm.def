@@ -15,7 +15,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
 %post
     echo ">>> Installing system packages..."
     apt-get update && \
-    apt-get install -y build-essential git default-jdk default-jre vim && \
+    apt-get install -y build-essential git default-jdk default-jre vim curl wget iproute2 dnsutils lsof telnet && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +23,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
     pip3 install --no-cache-dir uv
 
     echo ">>> Installing critical pip packages..."
-    uv pip install --system --no-cache-dir vllm==0.6.3 ray
+    uv pip install --system --no-cache-dir vllm==0.6.3 'ray[default]==2.46.0'
 
     echo ">>> Installing common pip packages..."
     uv pip install --system --no-cache-dir \
@@ -39,6 +39,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
         matplotlib \
         seaborn \
         blis \
+        "transformers<=4.52" \
 	hf_xet 
 
     echo ">>> Installing utility packages..."
