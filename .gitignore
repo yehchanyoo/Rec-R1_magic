@@ -131,3 +131,7 @@ tests/e2e/toy_examples/deepspeed/synchronous/output.txt
 
 # Image files
 *.sif
+
+# Logs
+slurm/*.err
+slurm/*.out
