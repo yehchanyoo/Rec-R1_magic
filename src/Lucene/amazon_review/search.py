@@ -22,8 +22,9 @@ class PyseriniMultiFieldSearch:
 
         results = []
         for hit in hits:
-            doc = json.loads(hit.raw)  # Get raw document
-            results.append((doc["id"], doc["title"], hit.score))  # (parent_asin, title, relevance score)
+            doc_id = hit.docid # Get id of raw document
+            contents = hit.lucene_document.get("contents") or "NO_CONTENT" # Get document
+            results.append((doc_id, contents, hit.score))
 
         return results
 
@@ -60,7 +61,7 @@ class PyseriniMultiFieldSearch:
         for i, query in enumerate(queries):
             hits = results_dict[str(i)]  # Get results for query `i`
             formatted_results = [
-                (json.loads(hit.raw)["id"], json.loads(hit.raw)["contents"], hit.score)
+                (hit.docid, hit.lucene_document.get("contents") or "NO_CONTENT", hit.score)
                 for hit in hits
             ]
             final_results[query] = formatted_results
