@@ -7,4 +7,4 @@ python -m pyserini.index.lucene -collection JsonCollection \
  -index $INDEX_DIR \
  -generator DefaultLuceneDocumentGenerator \
  -threads 4 \
- -storePositions -storeDocvectors -storeRaw
+ -storePositions -storeDocvectors -storeRaw -storeContents
