@@ -1,4 +1,4 @@
-DOMAIN_NAME=$1
+DOMAIN_NAME=All_Beauty
 INPUT_DIR=database/amazon_review/$DOMAIN_NAME/jsonl_docs
 INDEX_DIR=database/amazon_review/$DOMAIN_NAME/pyserini_index
 
