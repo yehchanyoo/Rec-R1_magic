@@ -3,7 +3,7 @@ import os
 import pdb
 
 file_dir = 'data/amazon_review/processed'
-domain_name_list = ['All_Beauty', 'Baby_Products', 'Video_Games']
+domain_name_list = ['All_Beauty']
 output_dir = 'data/amazon_review/processed/corpus'
 os.makedirs(output_dir, exist_ok=True)
 
