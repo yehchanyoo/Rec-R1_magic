@@ -10,11 +10,11 @@ export CUDA_VISIBLE_DEVICES=0,1
 export PROJECT_NAME="adv-ml-project"
 
 # Data prep
-python src/Lucene/amazon_c4/0_gen_data.py
-mkdir -p data/amazon_c4/raw/cache/Amazon-C4
-python src/Dense/amazon_c4/1_doc_ids.py
+# python src/Lucene/amazon_c4/0_gen_data.py
+# mkdir -p data/amazon_c4/raw/cache/Amazon-C4
+# python src/Dense/amazon_c4/1_doc_ids.py
 # Make sure to edit model_name
-python src/Dense/amazon_c4/2_build_index.py
+# python src/Dense/amazon_c4/2_build_index.py
 
 # Don't forget to edit reward_score_dense
 # Trainer
