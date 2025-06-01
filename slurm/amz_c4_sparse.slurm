@@ -7,7 +7,7 @@
 #SBATCH --account=stf
 #SBATCH --partition=gpu-l40,gpu-l40s
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
 #SBATCH --gpus=2
 #SBATCH --time=15:00:00 # Max runtime in DD-HH:MM:SS format.
