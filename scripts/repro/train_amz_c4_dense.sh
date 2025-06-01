@@ -1,19 +1,22 @@
 export N_GPUS=2
 export BASE_MODEL=Qwen/Qwen2.5-3B-Instruct
-export DATA_DIR=data/amazon_c4/inst/qwen-instruct
+export DATA_DIR=data/amazon_c4/inst/dense/subset_other
 export ROLLOUT_TP_SIZE=1
 export DATE=$(date +%Y%m%d_%H%M%S)
-export EXPERIMENT_NAME="qwen2.5-3b-inst-ppo-${SLURM_JOB_NAME}-${DATE}"
+export EXPERIMENT_NAME="qwen2.5-3b-inst-ppo-dense-${SLURM_JOB_NAME}-${DATE}"
 export VLLM_ATTENTION_BACKEND=XFORMERS
 export HF_HOME="/home/rapids/Rec-R1_magic/.cache/huggingface"
 export CUDA_VISIBLE_DEVICES=0,1
 export PROJECT_NAME="adv-ml-project"
 
-# Data Prep
-# python src/Lucene/amazon_c4/0_gen_data.py
-# python src/Lucene/amazon_c4/1_convert_format.py
-# bash src/Lucene/amazon_c4/2_build_database.sh
+# Data prep
+python src/Lucene/amazon_c4/0_gen_data.py
+mkdir -p data/amazon_c4/raw/cache/Amazon-C4
+python src/Dense/amazon_c4/1_doc_ids.py
+# Make sure to edit model_name
+python src/Dense/amazon_c4/2_build_index.py
 
+# Don't forget to edit reward_score_dense
 # Trainer
 python -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
@@ -50,8 +53,8 @@ python -m verl.trainer.main_ppo \
     trainer.default_hdfs_dir=null \
     trainer.n_gpus_per_node=$N_GPUS \
     trainer.nnodes=1 \
-    trainer.save_freq=50 \
-    trainer.test_freq=10 \
+    trainer.save_freq=100 \
+    trainer.test_freq=20 \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
-    trainer.total_epochs=1 2>&1 | tee logs/amazon_c4_3b-grpo-verl_2gpu_${DATE}.log
+    trainer.total_epochs=1 2>&1 | tee logs/amazon_c4_3b-dense-grpo-verl_2gpu_${DATE}.log

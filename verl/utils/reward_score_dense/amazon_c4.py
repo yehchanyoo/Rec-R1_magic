@@ -11,18 +11,18 @@ sys.path.append('./')
 
 from src.Dense.amazon_c4.search import FaissHNSWSearcher
 
-# model_name = 'blair-base'
-model_name = 'blair-large'
+model_name = 'blair-base'
+# model_name = 'blair-large'
 print(f"Using model: {model_name}")
 
 if model_name == 'blair-base':
     model_path = "hyp1231/blair-roberta-base"
     index_path = f"data/amazon_c4/raw/dense_index/blair-base/faiss_hnsw_index.bin"
-    doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+    doc_ids_path = f"data/amazon_c4/raw/cache/Amazon-C4.npy"
 elif model_name == 'blair-large':
     model_path = "hyp1231/blair-roberta-large"
     index_path = f"data/amazon_c4/raw/dense_index/blair-large/faiss_hnsw_index.bin"
-    doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+    doc_ids_path = f"data/amazon_c4/raw/cache/Amazon-C4.npy"
 
 try:
     search_system = FaissHNSWSearcher(model_name=model_path, 
