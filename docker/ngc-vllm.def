@@ -7,15 +7,12 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
     export DEBIAN_FRONTEND=noninteractive
     export MAX_JOBS=4
     export NINJA_FLAGS="-j4"
-    export HF_HOME="/home/rapids/.cache/huggingface"
-
-%files
-    . /home/rapids/Rec-R1_magic
+    export HF_HOME="/home/rapids/Rec-R1_magic/.cache/huggingface"
 
 %post
     echo ">>> Installing system packages..."
     apt-get update && \
-    apt-get install -y build-essential git default-jdk default-jre vim curl wget iproute2 dnsutils lsof telnet && \
+    apt-get install -y build-essential git default-jdk default-jre vim curl wget iproute2 dnsutils lsof gdb file && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +20,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
     pip3 install --no-cache-dir uv
 
     echo ">>> Installing critical pip packages..."
-    uv pip install --system --no-cache-dir vllm==0.6.3 'ray[default]==2.46.0'
+    uv pip install --system --no-cache-dir --no-build-isolation vllm==0.6.3 'ray[default]==2.46.0'
 
     echo ">>> Installing common pip packages..."
     uv pip install --system --no-cache-dir \
@@ -40,7 +37,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
         seaborn \
         blis \
         "transformers<=4.52" \
-	hf_xet 
+        hf_xet 
 
     echo ">>> Installing utility packages..."
     uv pip install --system --no-cache-dir wandb py-spy pyserini
@@ -54,6 +51,8 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
     conda clean -afy
 
     echo ">>> Installing local Rec-R1_magic package..."
-    cd /home/rapids/Rec-R1_magic && \
+    cd /home/rapids && \
+    git clone https://github.com/yehchanyoo/Rec-R1_magic.git
+    cd Rec-R1_magic && \
     uv pip install --system --no-build-isolation -e .
 
