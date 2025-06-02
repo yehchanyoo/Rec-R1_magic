@@ -178,10 +178,9 @@ if __name__ == '__main__':
 
         # 2) "Prompt" column? Extract its content field
         if 'prompt' in df.columns:
-            df['prompt_content'] = df['prompt'].apply(
+            df['prompt'] = df['prompt'].apply(
                 lambda x: x[0].get('content', '') if isinstance(x, list) and len(x) > 0 else ''
             )
-            df.drop(columns=['prompt'], inplace=True)
 
         # 3) Write out a valid Parquet file
         output_path = os.path.join(save_dir, f"{name}.parquet")
