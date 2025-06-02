@@ -1,3 +1,5 @@
+# NOTE: Currently buggy -- use this code at your peril
+
 ## Changes made:
 # N_GPUS = 2 -> 1
 # ROLLOUT_TP_SIZE = 2 -> 1
