@@ -172,17 +172,11 @@ if __name__ == '__main__':
     hdfs_dir = os.path.join(args.hdfs_dir, args.template_type) if args.hdfs_dir is not None else None
 
     # Improved Parquet flattening method
-    def flatten_and_save(dataset, name, save_dir):
+    def convert_and_save(dataset, name, save_dir):
         # 1) Convert HuggingFace Dataset -> pandas DataFrame
         df = pd.DataFrame(dataset)
 
-        # 2) "Prompt" column? Extract its content field
-        if 'prompt' in df.columns:
-            df['prompt'] = df['prompt'].apply(
-                lambda x: x[0].get('content', '') if isinstance(x, list) and len(x) > 0 else ''
-            )
-
-        # 3) Write out a valid Parquet file
+        # 2) Write out a valid Parquet file
         output_path = os.path.join(save_dir, f"{name}.parquet")
         df.to_parquet(output_path, engine='pyarrow', index=False)
         print(f"~\~E Saved {name}.parquet (shape={df.shape}) ~F~RR{output_path}")
@@ -191,9 +185,9 @@ if __name__ == '__main__':
     os.makedirs(save_dir, exist_ok=True)
 
     # Flatten & save as Parquet
-    flatten_and_save(train_dataset, "train", save_dir)
-    flatten_and_save(val_dataset,   "val",   save_dir)
-    flatten_and_save(test_dataset,  "test",  save_dir)
+    convert_and_save(train_dataset, "train", save_dir)
+    convert_and_save(val_dataset,   "val",   save_dir)
+    convert_and_save(test_dataset,  "test",  save_dir)
     
     if hdfs_dir is not None:
         makedirs(hdfs_dir)
