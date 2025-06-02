@@ -1,4 +1,18 @@
+export N_GPUS=1
+export BASE_MODEL=Qwen/Qwen2.5-3B-Instruct
+export DATA_DIR=data/amazon_review/inst
+export ROLLOUT_TP_SIZE=1
+export EXPERIMENT_NAME=matching-qwen3b-inst-ppo
+export VLLM_ATTENTION_BACKEND=XFORMERS
+export HF_HOME="/home/rapids/.cache/huggingface"
+export PROJECT_NAME="adv-ml-project"
+export CUDA_VISIBLE_DEVICES=0
+
 DATE=$(date '+%Y-%m-%d-%H-%M-%S')
+
+ray start --head --num-cpus=16 --num-gpus=1
+sleep 5
+mkdir -p exp_log
 
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
@@ -40,3 +54,5 @@ python3 -m verl.trainer.main_ppo \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.total_epochs=50 2>&1 | tee exp_log/$EXPERIMENT_NAME-grpo-verl_2gpus_$DATE.log
+
+ray stop
