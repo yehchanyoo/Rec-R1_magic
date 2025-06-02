@@ -1,3 +1,5 @@
+# Original code from the original repository
+
 DATE=$(date '+%Y-%m-%d-%H-%M-%S')
 
 python3 -m verl.trainer.main_ppo \
