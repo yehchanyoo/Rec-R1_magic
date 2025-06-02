@@ -1,4 +1,18 @@
+export N_GPUS=2
+export BASE_MODEL=Qwen/Qwen2.5-3B-Instruct
+export DATA_DIR=data/amazon_review/inst
+export ROLLOUT_TP_SIZE=2
+export EXPERIMENT_NAME=matching-qwen3b-inst-ppo
+export VLLM_ATTENTION_BACKEND=XFORMERS
+export HF_HOME="/home/rapids/.cache/huggingface"
+export PROJECT_NAME="adv-ml-project"
+export CUDA_VISIBLE_DEVICES=0,1
+
 DATE=$(date '+%Y-%m-%d-%H-%M-%S')
+
+ray start --head --num-cpus=16 --num-gpus=2
+sleep 5
+mkdir -p exp_log
 
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
@@ -20,8 +34,8 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.actor.kl_loss_type=low_var_kl \
     actor_rollout_ref.rollout.temperature=0.6 \
     actor_rollout_ref.rollout.top_p=0.95 \
-    actor_rollout_ref.actor.fsdp_config.grad_offload=True \
-    actor_rollout_ref.actor.fsdp_config.optimizer_offload=True \
+    actor_rollout_ref.actor.fsdp_config.grad_offload=False \
+    actor_rollout_ref.actor.fsdp_config.optimizer_offload=False \
     actor_rollout_ref.rollout.log_prob_micro_batch_size=2 \
     actor_rollout_ref.rollout.tensor_model_parallel_size=$ROLLOUT_TP_SIZE \
     actor_rollout_ref.rollout.gpu_memory_utilization=0.3 \
@@ -40,3 +54,5 @@ python3 -m verl.trainer.main_ppo \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.total_epochs=50 2>&1 | tee exp_log/$EXPERIMENT_NAME-grpo-verl_2gpus_$DATE.log
+
+ray stop
