@@ -15,6 +15,7 @@ from collections import defaultdict, Counter
 import random
 import pdb
 import csv
+import pandas as pd
 
 PROMPT = """You are an intelligent shopping assistant that helps predict what users may want to purchase next. Below is a list of items a user has purchased recently. Your task is to infer one or multiple kinds of products they may want to buy next, and generate relevant query terms that can be used to search for these potential products.
 Below is the user purchase history:
