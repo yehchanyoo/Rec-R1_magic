@@ -6,10 +6,11 @@
 # Make the parquets writable by user
 chmod u+w data/amazon_review/inst/*.parquet
 
-# Zero out the existing parquets
+# Zero out/delete the existing parquets
 for f in data/amazon_review/inst/*.parquet; do
   : > "$f"
 done
+rm -rf data/amazon_review/inst/*.parquet
 
 # Delete past Lucene files before rebuilding Lucene database
 rm -rf database/amazon_review/All_Beauty/pyserini_index/
