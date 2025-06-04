@@ -1,0 +1,514 @@
+{
+    "390": {
+        "generated_text": "\"omega knife black\" OR \"omega knife blacks\" OR \"omega knives black\" OR \"omega knife blacx\" AND (omega AND knife AND black)",
+        "target": "['B01FHDZGGM', 'B00GMNI7SQ', 'B07QVKTG9P', 'B07G9RBFCP', 'B001EIM83E']"
+    },
+    "391": {
+        "generated_text": "\"(self defense gun OR self defense knife OR self defense pepper spray OR self defense baton) AND weapons\"",
+        "target": "['B01FHDZGGM', 'B07DY4J11S']"
+    },
+    "392": {
+        "generated_text": "\"(crossman AND full) AND auto\"",
+        "target": "['B07R5WLY7K', 'B081V8BT7G', 'B01DC3ZH7M', 'B084RNXHTD', 'B07G2J1XVR']"
+    },
+    "393": {
+        "generated_text": "\"('air AND soft gun') AND kids\"",
+        "target": "['B079VHLFZ7', 'B01MQS74AT', 'B0797FQRWV', 'B0037RN4M4']"
+    },
+    "394": {
+        "generated_text": "\"(bar dartboard OR pub dartboard OR sports bar dartboard OR casino dartboard OR bar style dartboard) AND dartboard\"",
+        "target": "['B007J38NC8', 'B089SSJHT2', 'B077MC92Q5', 'B07FP1LXPJ', 'B088JPXMVP', 'B091MMW8SZ', 'B00009EPCY', 'B000G2Z4VW', 'B000UV57DE', 'B0052QO71A', 'B0018D69TE', 'B00PHEP70W', 'B00EX7FCJ0']"
+    },
+    "395": {
+        "generated_text": "\"(YouTube challenges AND YouTube competition) OR (Youtuber challenges AND Youtuber competition)\"",
+        "target": "['B073R59XYF', 'B08THZBHC5', 'B0778X6JJX', 'B0742DY1GX', 'B075ZRJDK4']"
+    },
+    "396": {
+        "generated_text": "\"electric AND adult AND tricycle\"",
+        "target": "['B07ZZ2SNXT']"
+    },
+    "397": {
+        "generated_text": "\"177 AND alloy pellets AND air rifle\"",
+        "target": "['B0015N6I70', 'B007UOOWSA', 'B00B7399TW', 'B00AU6A3D8', 'B00NW9KL7I', 'B0074MUZZM', 'B003C6W3XG', 'B003DW5KH0', 'B076PS18MC', 'B07NDBW172', 'B0973MVHX4', 'B0973N91P9', 'B000F2XX98', 'B001BS98JE', 'B007FFXB90']"
+    },
+    "398": {
+        "generated_text": "\"(spray water bottle AND for drinking) NOT (flap to drink)\"",
+        "target": "['B07DLFJ1WV', 'B07DLG3B1W', 'B07W67T98W', 'B00TY7OHEA', 'B00U0JIWXS', 'B07B1KXYFV']"
+    },
+    "399": {
+        "generated_text": "\"Bike Carrier AND SUV AND Without Hitch\" OR \"Bike Carrier AND SUV\"",
+        "target": "['B08B5M9C4R', 'B000QJ8C1Y', 'B08K2J778F', 'B07954CY49', 'B077XYM4VF', 'B075FMFXFZ']"
+    },
+    "400": {
+        "generated_text": "\"trunk bike rack AND model number 4\" OR \"trunk bike rack OR model number 4\"",
+        "target": "['B000QJ8C1Y']"
+    },
+    "401": {
+        "generated_text": "\"100 oz\" AND \"water bottle\" AND \"bpa free\"",
+        "target": "['B08D9BV9LQ', 'B08WRHMSLQ', 'B08Z379RFJ', 'B097QPBC65', 'B08D6SH6SQ', 'B08VGS7VH8', 'B07S59Q765']"
+    },
+    "402": {
+        "generated_text": "\"('1/2 gallon water bottle' AND 'without straw')\"",
+        "target": "['B08791Q8X4', 'B08VMV91F3', 'B08SGR79PQ', 'B08XZ7G2B5', 'B08HMLPH5R', 'B07WW3KC3D']"
+    },
+    "403": {
+        "generated_text": "\"(fsa AND fat pig)\"",
+        "target": "['B003J7XCRO', 'B07WF97NJM', 'B07D48LQYJ', 'B07D589QDN', 'B001N84WKC', 'B004OUQC22']"
+    },
+    "404": {
+        "generated_text": "\"(15 pound AND barbell) OR (barbell AND bar)\"",
+        "target": "['B00E0DJ7L6', 'B00R93GJ74', 'B09B5G8914', 'B088CVNBNQ', 'B08NJ6TQW5', 'B098XBCRYC', 'B07VW85FNQ', 'B01A03C2GQ']"
+    },
+    "405": {
+        "generated_text": "\"(1 wheeled skates AND no brakes) OR (one wheel skates AND no breaks)\"",
+        "target": "['B07V35YGR7', 'B07X3MJNZC', 'B08FY7KJHG', 'B018SRBNLQ', 'B07FD4278Y']"
+    },
+    "406": {
+        "generated_text": "\"(10 gallon camping shower AND shower bag)\"",
+        "target": "['B087441THB']"
+    },
+    "407": {
+        "generated_text": "\"10 lb fly fishing leader AND (tippet OR line OR rope) AND (angling OR fisherman OR fisher)\"",
+        "target": "['B072K5D5Z5', 'B0160BROBU', 'B001T6MM46', 'B000E66OHS']"
+    },
+    "408": {
+        "generated_text": "\"stackable AND dumbbells AND weight AND sets\"",
+        "target": "['B08P614WWT', 'B08BNMKDPH', 'B07G8NDVT2', 'B000OC5RXE', 'B08J2L498P', 'B07PZV2HDG', 'B07PZV2HDG', 'B077ZGS799', 'B01J8S38LW', 'B07373N7DR', 'B000NWTX6W', 'B00A21NRNO', 'B08DKNWH47', 'B08YD818YN', 'B08YJXMM28', 'B0946QHLW5', 'B07J5FRH9B']"
+    },
+    "409": {
+        "generated_text": "\"razor AND mx650 AND dirt bike\"",
+        "target": "['B000FK7C60', 'B01N9JFSD8', 'B004DGVUWO', 'B07HGG59KD', 'B08T6GZ82D', 'B00SV9XH7U', 'B01LZ2OCKW']"
+    },
+    "410": {
+        "generated_text": "\"(work AND will suck AND without you) OR (water bottle)\"",
+        "target": "['B0868Q7M18', 'B088BZPS35', 'B09226SN2G']"
+    },
+    "411": {
+        "generated_text": "\"(tonal AND exercise equipment) OR (exercise equipment AND tonal)\"",
+        "target": "['B00K6ZURAW', 'B07GYXF65S', 'B07HF36TC1', 'B07HF36TC1', 'B07YNGMJY7', 'B08JTV9DNG', 'B08LFZGBQ4']"
+    },
+    "412": {
+        "generated_text": "\"circle belts AND for women\"",
+        "target": "['B00065X222']"
+    },
+    "413": {
+        "generated_text": "\"yoga strap AND without buckle\" OR \"yoga belt AND buckleless\" OR \"flexi strap AND buckle-free\"",
+        "target": "['B00065X222', 'B01LXWS98E', 'B07H23HJBQ', 'B00X7N1MRW', 'B07WJRK81C', 'B087LWRSX4', 'B088X56YHY', 'B092MJ621Z', 'B01E04TOJO']"
+    },
+    "414": {
+        "generated_text": "\"arm AND bra AND fat workout\"",
+        "target": "['B0081SBAPW', 'B08G87CWCL']"
+    },
+    "415": {
+        "generated_text": "\"('104 bcd crank arms' AND 'without chainring')\"",
+        "target": "['B07Z81PSTD', 'B07SYYKKRW', 'B004SKKCLU', 'B075FM93Z4', 'B07593166H', 'B07FCPR3TR']"
+    },
+    "416": {
+        "generated_text": "\"11-speed crankset\" AND \"without ring mtb\"",
+        "target": "['B074QH1MYY', 'B08J896RT6', 'B005FWBPZW', 'B0739Q82LH']"
+    },
+    "417": {
+        "generated_text": "\"play sets AND adults\" OR \"toys AND adults\" OR \"adult toys\" OR \"adult play sets\" OR \"adult play equipment\"",
+        "target": "['B08B53ZB2T', 'B093L6WRG3', 'B088DH75BB', 'B0881ZSGSB', 'B08T89ZJRQ', 'B08P3MVX22', 'B08TBPPQDK', 'B08GD5R328', 'B08VJ2YY6K']"
+    },
+    "418": {
+        "generated_text": "\"tumble trampoline\" OR \"tumble AND trampoline\"",
+        "target": "['B08KYDGTS6', 'B07T532RGX', 'B07QB9DZYY', 'B01MS8GY1U']"
+    },
+    "419": {
+        "generated_text": "\"motos AND electricas AND adultos\"",
+        "target": "['B07K9MB6X1', 'B06X3VLJ5N', 'B009B0OSLC', 'B07XVP6N3H', 'B07SQZFV3J', 'B099RGQDSP', 'B08ZCFD9LP', 'B08NV6TLQ7', 'B082H3TYCJ']"
+    },
+    "420": {
+        "generated_text": "\"Hydro Flask AND small OR small AND Hydro Flask\"",
+        "target": "['B07WHS3MPV', 'B078PMNGQX', 'B0744RCT77', 'B01ACASTHS']"
+    },
+    "421": {
+        "generated_text": "\"hydro AND flask AND straw\"",
+        "target": "['B07PVD2DZN', 'B078PMNGQX', 'B01GW2GVC0', 'B07S64VPQR']"
+    },
+    "422": {
+        "generated_text": "\"16. 9 ounce AND bottled water cooler\" AND \"16. 9 ounce AND water cooler bottle\" AND \"16. 9 ounce AND bottled water dispenser\"",
+        "target": "['B07Q7MY1NK', 'B074KDLF1H', 'B06Y39F84M']"
+    },
+    "423": {
+        "generated_text": "\"(trp AND spyre) OR (spyre AND trp)\"",
+        "target": "['B01N2359AR', 'B077JVRG6X', 'B07S7TGFLZ', 'B07Z3LDJ17', 'B078W642RM', 'B074ZHZZ5D']"
+    },
+    "424": {
+        "generated_text": "\"18 inch OR batman\"",
+        "target": "['B00ZJHFUQS', 'B00IL5XY1I', 'B00BF7G7D6']"
+    },
+    "425": {
+        "generated_text": "\"2 foot fishing rod\" AND \"andreel setup\"",
+        "target": "['B00OTOK5UI', 'B00FPR2PHE', 'B00FPR2OJ8', 'B002Z2VZMS']"
+    },
+    "426": {
+        "generated_text": "\"(iron AND golf club) OR 2 iron\"",
+        "target": "['B07VYK5F79']"
+    },
+    "427": {
+        "generated_text": "\"goalkeeper AND net\" OR \"goalkeeper OR net\"",
+        "target": "['B07NW2KF32', 'B07NW2KF32', 'B07LGXDTFG', 'B0779QVZBT', 'B011VNV3NW', 'B013LPVN1A', 'B00Z857848', 'B01MQTRK8I']"
+    },
+    "428": {
+        "generated_text": "\"20 ft trampoline AND enclosure\"",
+        "target": "['B09742421Z', 'B093L6WRG3']"
+    },
+    "429": {
+        "generated_text": "\"bounce AND pro AND trampoline\"",
+        "target": "['B09742421Z', 'B07R44XP7Y', 'B077SMJH59', 'B077QFRP8D', 'B01N6U2YL6']"
+    },
+    "430": {
+        "generated_text": "\"20 lb AND medicine balls AND rubber\"",
+        "target": "['B01J2D0CGW']"
+    },
+    "431": {
+        "generated_text": "\"20 pound weights\" AND (\"weights\" AND \"dumbbells\" AND \"gym equipment\" AND \"strength training\")",
+        "target": "['B08CHLLW5W']"
+    },
+    "432": {
+        "generated_text": "\"20 wheel mountain bike\" AND \"20 inch mountain bike\" AND \"20 wheels mountain bike\"",
+        "target": "['B07X96JDDZ', 'B07SZTKDVH']"
+    },
+    "433": {
+        "generated_text": "\"(20 x 26 AND inner tube AND bicycle)\"",
+        "target": "['B076Z69P95']"
+    },
+    "434": {
+        "generated_text": "\"tox*\" OR (toxizer AND cleaning) OR (toxizer AND styling) OR (toxizer AND other)",
+        "target": "['B07HT4QYY1', 'B082H3TYCJ', 'B09157HLGV', 'B0924R4WPC', 'B09491KZVF', 'B08D94C95Z']"
+    },
+    "435": {
+        "generated_text": "\"adjustable weight kettlebell\" OR \"adjustable size kettlebell\"",
+        "target": "['B074V1FMDT', 'B084RSDLWG', 'B0875N9VMH', 'B07YY14GZS']"
+    },
+    "436": {
+        "generated_text": "\"20lb AND maxima AND chameleon\"",
+        "target": "['B07QPYFQ2C', 'B003FKTEZE']"
+    },
+    "437": {
+        "generated_text": "\"cultural tags\" AND \"game\"",
+        "target": "['B07GSNRZVJ', '1933054395', 'B01M6B9JV5', 'B07NDRRP33', 'B08NS8FQ29', 'B000BKZ97I', 'B01G5HR8TC']"
+    },
+    "438": {
+        "generated_text": "\"(9mm ammo cans AND ammo cans) OR (9mm ammo cans OR ammo cans)\"",
+        "target": "['B00I8NJMM8', 'B08JRW3WYW', 'B08ZSM2TLX', 'B00I8NJM5K', 'B00T4XL2MO']"
+    },
+    "439": {
+        "generated_text": "\"reloading gun\" AND \"ammunition reloading kit\" AND \"gun reloading tool\" AND \"reloading press\" AND \"ammunition reloading machine\"",
+        "target": "['B000PD6QJ6', 'B008F5H636', 'B003ISVWC6']"
+    },
+    "440": {
+        "generated_text": "\"MTM OR gun case\"",
+        "target": "['B019LIO7V4', 'B01MR2CXZ8', 'B000H8ZWYE', 'B0000C50G9', 'B0000C50GA', 'B0000C50GC', 'B000JJND7E', 'B001F0GDO6']"
+    },
+    "441": {
+        "generated_text": "\"DPMS SBR AND accessories\"",
+        "target": "['B01GHSY0SQ', 'B07GWNTJR4', 'B01N5BWE4P', 'B019MN7N5U', 'B08BHL15LL', 'B07G2J1XVR', 'B07TWCZGDL', 'B0791D8GH2', 'B074NCC554', 'B01GAETRNA']"
+    },
+    "442": {
+        "generated_text": "\"(\"riflescope AND night vision AND scope\") OR (\"rifle AND night vision AND scope\")\"",
+        "target": "['B07211HGZ2', 'B082RF18V4', 'B0768BHHFY', 'B06XJ1M846', 'B088FJ1Q6J']"
+    },
+    "443": {
+        "generated_text": "\"(cruiser bike AND for women)\"",
+        "target": "['B071FTK77Y', 'B06XXC8WTT']"
+    },
+    "444": {
+        "generated_text": "\"24 volt electric plug trolling motor\" AND \"electric trolling motor\" AND \"plug-in trolling motor\"",
+        "target": "['B07XLFT1M8', 'B000NI38O4']"
+    },
+    "445": {
+        "generated_text": "\"24v AND trolling motor AND bow mount\"",
+        "target": "['B01N94X60M', 'B01M8IHO7A', 'B01MQ3Y0TJ', 'B077BG7YW5', 'B000DZSGYE', 'B001M5TTF4', 'B00HUQMTZQ', 'B01M3063HI']"
+    },
+    "446": {
+        "generated_text": "\"fit\" AND \"simplify\" AND \"resistance\" AND \"loop\" AND \"exercise bands\" OR \"fit\" AND \"simplify\" AND \"resistance\" AND \"loop\" AND \"bands\" OR \"fit\" AND \"simplify\" AND \"resistance\" AND \"bands\" OR \"fit\" AND \"simplify\" AND \"resistance\" AND \"exercise bands\"",
+        "target": "['B01KS6DZ34', 'B074775QXB', 'B07CZTNY7T', 'B07ZYYYM1C', 'B087YSHDV5', 'B087ZZ2726', 'B0882Y717Z', 'B0897QTNND', 'B08DDJ7T26', 'B09CSB959J', 'B08NT7WGPH', 'B07CZVWKW6', 'B07X56M51P', 'B07X43JKWJ']"
+    },
+    "447": {
+        "generated_text": "\"BMX bike rims AND (sun rim)\"",
+        "target": "['B07H46L831', 'B0014GJYO2', 'B006FCHTZQ', 'B00TJAOKIU', 'B01HOXOS0I', 'B0186OUK3I', 'B00B133ITA', 'B000AO9KS4', 'B005LY4UYC', 'B000BMNP2W', 'B000AO7DBA', 'B000AO5FEC']"
+    },
+    "448": {
+        "generated_text": "\"(26 inch bike tire) AND (gravel bike tire)\"",
+        "target": "['B078BC4FHJ', 'B01HZ67WBQ', 'B00RDDRVHW']"
+    },
+    "449": {
+        "generated_text": "\"28 oz tent\" AND \"28oz tent\" AND \"28 ounce tent\"",
+        "target": "['B01F58B8L6', 'B018TLR01S']"
+    },
+    "450": {
+        "generated_text": "\"basketball AND hoops AND balls AND training AND games AND leagues\"",
+        "target": "['B003VIET82', 'B00SOKFHFG', 'B0794BVL8X', 'B07PKX333K', 'B07S5R8HKV', 'B083QVHVZQ', 'B000A7OUE0', 'B002MAF47A', 'B00HNQD8K8', 'B00AOCV50S', 'B00HNQD894']"
+    },
+    "451": {
+        "generated_text": "\"3 inch foam roller AND (physical therapy OR exercise)\"",
+        "target": "['B07LCSN6DZ', 'B000AY4R0K']"
+    },
+    "452": {
+        "generated_text": "\"30 quart AND coolers\"",
+        "target": "['B004GN8KGI', 'B01N0TQ6MV']"
+    },
+    "453": {
+        "generated_text": "\"30 oz AND coffee mug\"",
+        "target": "['B08FC371LH', 'B08DKRC44J', 'B093H9FSS9', 'B0993V16CM']"
+    },
+    "454": {
+        "generated_text": "\"camelbak AND eddy AND 32 oz AND water bottle\"",
+        "target": "['B07HGR3S4C', 'B07HGTQ5MK', 'B07HGR8L96', 'B015DJAYD0']"
+    },
+    "455": {
+        "generated_text": "\"(back roller AND roller) OR (back roller OR roller)\"",
+        "target": "['B07GQDW62F', 'B07L2Y3LLB', 'B07HGMXQP9', 'B07C9S3NFT']"
+    },
+    "456": {
+        "generated_text": "\"(380 reloading dies OR 380 reload dies OR 380 reloading dies kit) AND dies\"",
+        "target": "['B00162TLWE', 'B000N8MWHS']"
+    },
+    "457": {
+        "generated_text": "\"small gun AND backpack\"",
+        "target": "['B01LQQZ2RC', 'B07GGP69QD', 'B07TWB7JP5']"
+    },
+    "458": {
+        "generated_text": "\"reusable plates\" AND \"reusable utensils\" AND \"set\"",
+        "target": "['B01E7EIXLC', 'B07MGVXFWJ', 'B07913K24B', 'B01CF4HPZQ', 'B07VXSB7TR', 'B078WZY91Y', 'B081JFCCVW']"
+    },
+    "459": {
+        "generated_text": "\"maven rifles AND rifle scopes\"",
+        "target": "['B08RYX7PWJ', 'B006X3WMRW', 'B005UGIMNQ']"
+    },
+    "460": {
+        "generated_text": "\"San Francisco 49ers AND hats AND men\"",
+        "target": "['B07HYKKW8Q', 'B077KD5TBD', 'B007940HLM', 'B07HKHVY8S']"
+    },
+    "461": {
+        "generated_text": "\"(5. 11 AND shoulder bag) OR (shoulder bag AND 5. 11) OR (5. 11 AND bag) OR (bag AND 5. 11) OR (shoulder bag AND 5. 11 tactical) OR (5. 11 tactical AND shoulder bag)\"",
+        "target": "['B07ZPC4XT7', 'B00CYBZ9ZY', 'B00CYBZBL6', 'B0131SE0KI', 'B002OP5TUA', 'B00XPV4C7S']"
+    },
+    "462": {
+        "generated_text": "\"bag AND tactical AND model 5. 11 OR bag AND model 5. 11 AND tactical OR tactical bag model 5. 11\"",
+        "target": "['B07ZPC4XT7', 'B0131SE0KI', 'B00XPV4C7S']"
+    },
+    "463": {
+        "generated_text": "\"roofing materials\" OR \"roof repair services\" OR \"roof cleaning services\"",
+        "target": "['B07TXPPNHQ', 'B011NJ33VO', 'B0074OL2I4', 'B07VFP11W6', 'B004A32HUY', 'B003YJCDXQ']"
+    },
+    "464": {
+        "generated_text": "\"pool table AND ping pong table AND top combo\"",
+        "target": "['B00923WFJK', 'B005IX37AE', 'B016D3ZTR6', 'B001CCHHX8', 'B005IX37WC', 'B07PK672WW', 'B077XNNC97', 'B00N5TO7IY', 'B07G8XVBLS', 'B009QXTKLC', 'B078HC2KD5']"
+    },
+    "465": {
+        "generated_text": "\"(6 inch AND packer) OR (6 inch AND packer AND [plumbing]) OR (6 inch AND packer AND [automotive]) OR (6 inch AND packer AND [industrial_machinery])\"",
+        "target": "['B01FREISNE']"
+    },
+    "466": {
+        "generated_text": "\"Tents AND (6 person AND pop up)\"",
+        "target": "['B01GY46QIK']"
+    },
+    "467": {
+        "generated_text": "\"6ft surfboard\" AND \"surfboard bag\" OR \"6ft surfboard\"",
+        "target": "['B07NS2YNSL', 'B00HTA25W0']"
+    },
+    "468": {
+        "generated_text": "\"(7 1/8 AND baseball helmet) OR (7/8 AND baseball helmet) OR (7 1/8 AND baseball) OR (7/8 AND baseball) OR (baseball AND 7 1/8) OR (baseball AND 7/8)\"",
+        "target": "['B0182XY70U', 'B01N35SUR3', 'B014FWH7NG', 'B010R04D14']"
+    },
+    "469": {
+        "generated_text": "\"bike AND rear wheel AND parts\"",
+        "target": "['B006FCHTZQ', 'B000AO3GES', 'B07MN943TF', 'B0063R3L46', 'B004YJ2NXU', 'B00129ACWO', 'B000AO9PCU']"
+    },
+    "470": {
+        "generated_text": "\"(700x32 tire) AND (7. 00-32 tire)\"",
+        "target": "['B01JN4YDTC', 'B005UGD9XY']"
+    },
+    "471": {
+        "generated_text": "\"8 speed shifter AND drop bar AND right\"",
+        "target": "['B07BVPTD7S', 'B07BVPMRKN', 'B073X7QH1C', 'B00CABMQLS']"
+    },
+    "472": {
+        "generated_text": "\"small AND cooler AND (beverage OR food)\"",
+        "target": "['B07MM67QNJ']"
+    },
+    "473": {
+        "generated_text": "\"Syosin resistance bands\" AND (resistance bands OR bands)",
+        "target": "['B088396TM2', 'B07RLVNST5', 'B07HBP2KX7', 'B08RS7MQD6', 'B087LZYVK5', 'B094G1JQS3']"
+    },
+    "474": {
+        "generated_text": "(product_id:900 AND category:\"Global Bowling Ball Bag\")",
+        "target": "['B07G3JCSBW', 'B07G3J8JQ3', 'B07G3J74RD', 'B07G3H1QRM', 'B00CP6RSA2', 'B07G3HKTTZ']"
+    },
+    "475": {
+        "generated_text": "\"941m AND mercury\"",
+        "target": "['B0777PXCG5']"
+    },
+    "476": {
+        "generated_text": "\"('firearm cleaning kit' AND '9mm' AND 'with oil')\"",
+        "target": "['B084P3G16V', 'B07P1FX1PV', 'B002ZJ1364', 'B07XK6B4Z8']"
+    },
+    "477": {
+        "generated_text": "\"a15 EXACT case OR tactical\"",
+        "target": "['B087BCL7DS', 'B08Y8T4KY4', 'B075VBGMQ8']"
+    },
+    "478": {
+        "generated_text": "\"abu garcia AND baitcasting AND baitcaster\"",
+        "target": "['B011LUQLHS']"
+    },
+    "479": {
+        "generated_text": "\"action army AND VSR10 AND hop up AND chamber\"",
+        "target": "['B00P1OKTLA']"
+    },
+    "480": {
+        "generated_text": "\"galaxy AND active AND 2\"",
+        "target": "['B081DBNF6C', 'B07YNTSSP6', 'B07VPF4DGW', 'B081D9LJ8J', 'B07YNVGNPD', 'B081KB2FJ2', 'B07YNTPGZH', 'B07YNTM7P4', 'B07YNQP54K']"
+    },
+    "481": {
+        "generated_text": "\"acudraw AND acudraw pro AND acudraw software AND acudraw pro software\"",
+        "target": "['B079FB179M']"
+    },
+    "482": {
+        "generated_text": "\"(adidas AND suits AND women)\"",
+        "target": "['B07XVRYXDL', 'B07XVQCDKN']"
+    },
+    "483": {
+        "generated_text": "\"(adidas AND (tech fit AND compression shorts)) AND men\"",
+        "target": "['B01MG80Y1J', 'B00QG7ZU24']"
+    },
+    "484": {
+        "generated_text": "\"Bowflex AND Revolution AND home gym\"",
+        "target": "['B000OC5RXE', 'B000XU5U7A', 'B000GRDS6U', 'B000M0FDGE', 'B001OSIH8Y']"
+    },
+    "485": {
+        "generated_text": "\"(cap AND strength AND slant board)\"",
+        "target": "['B07HNLBZ4Y', 'B07HNLBZ4Y', 'B07DNYSJ8W', 'B07DNYSJ8W', 'B07GYXF65S', 'B00G44X9D6', 'B07ZZ4T674', 'B074BG38FZ', 'B07R7RZ8N7', 'B08Z3SPVBV', 'B093L4SPXL', 'B000J3JDIS']"
+    },
+    "486": {
+        "generated_text": "\"(red AND ryder AND bb) OR (red AND ryder AND buck)\"",
+        "target": "['B082LHGX4M', 'B002LY8GYA', 'B004T84NS4', 'B00BXHDJ34']"
+    },
+    "487": {
+        "generated_text": "\"(agility AND (speed OR quickness OR coordination)) OR (ladder AND (stepladder OR extension ladder OR utility ladder))\"",
+        "target": "['B085THZYXC', 'B086WNFRTW', 'B088FNBF9T', 'B089XYT6PD', 'B08C4ZBS7C', 'B08DHTCY41', 'B082NMVJJC', 'B07M9DMYR6', 'B071FN96N5']"
+    },
+    "488": {
+        "generated_text": "\"hard bow case AND compound\"",
+        "target": "['B07V87G7G6', 'B072YFN1TW', 'B072HCGKWD', 'B001QVLFH4', 'B000P9YEDU', 'B079M1YL37', 'B06XT6MC53', 'B07BYX1L31', 'B06W9J41BC', 'B07P2K4FJS', 'B07JPXQ2Q6', 'B01452JLVW', 'B000P432FG', 'B001B90J3C', 'B002TE5Y38', 'B007TOHDQY', 'B007XDAAW0', 'B007XDABW4', 'B0097RM11S', 'B00CP4MA16', 'B00DUIGLQG', 'B016EACM0A', 'B005V1DY0G']"
+    },
+    "489": {
+        "generated_text": "\"(air AND guns) OR (BB guns OR pellet guns OR air rifles OR pistols OR revolvers OR rifles)\"",
+        "target": "['B07VRSR1M9', '0990568776']"
+    },
+    "490": {
+        "generated_text": "\"(train horn AND (football games OR training)) OR (football games AND (train horn OR horns))\"",
+        "target": "['B06XBZGZB4', 'B004UOVBAU', 'B0019M5EZ4', 'B01KJ986SY', 'B008MUGZ5O']"
+    },
+    "491": {
+        "generated_text": "\"airsoft AND (guns OR toy guns) AND full auto AND (professional OR high quality)\" OR \"airsoft guns full auto professional grade\"",
+        "target": "['B076532SP4', 'B00GIBPYU6', 'B00BR9X780', 'B001B4QVMA', 'B000PSQWOK']"
+    },
+    "492": {
+        "generated_text": "\"(shotgun AND rifle AND pistol) OR (ammunition AND accessories)\"",
+        "target": "['B01DMJLDV0', 'B071HTQGX6', 'B00I5NVFPI', 'B00ENTF270', 'B0053DA5ZO']"
+    },
+    "493": {
+        "generated_text": "\"(workout equipment AND home gym AND women)\"",
+        "target": "['B07GYXF65S', 'B009QXP77I', 'B08CL4SLTS', 'B08CMJKJ5M']"
+    },
+    "494": {
+        "generated_text": "\"(mini stove AND stove) OR (stove OR mini stove)\"",
+        "target": "['B0125U36Q2', 'B00ZA39W6U']"
+    },
+    "495": {
+        "generated_text": "\"(wood AND stove) OR (wood-burning AND stove) OR (fireplace AND wood) OR (wood stove insert)\"",
+        "target": "['B072KGL1H1', 'B0155324VO', 'B07TF8SP6P']"
+    },
+    "496": {
+        "generated_text": "\"(all black AND yankees AND hat)\"",
+        "target": "['B07CBC3V2D', 'B08246L76H', 'B08BDS97PK', 'B08SZ94PR5', 'B095J3C381', 'B01ANNYJX2', 'B0772RJFS9', 'B00AE9RE9W']"
+    },
+    "497": {
+        "generated_text": "\"(one person AND blow up AND boat)\"",
+        "target": "['B00EVII3BK', 'B00EVII3BK']"
+    },
+    "498": {
+        "generated_text": "\"progressive press AND reloading\" OR \"reloading\" AND \"progressive press\"",
+        "target": "['B000PD01NS', 'B00VKPX4PW', 'B00162ROB4', 'B000NOQJ5S']"
+    },
+    "499": {
+        "generated_text": "\"fox AND 38 AND fork\" OR \"fox AND 38 OR fork\" OR \"fox OR 38 AND fork\" OR \"fox OR 38 OR fork\" OR \"38 fox fork\" OR \"38 fork fox\" OR \"fork 38 fox\" OR \"fork fox 38\"",
+        "target": "['B00V8S8DWU', 'B00V8S8DWU', 'B088KHFG9J', 'B07ZT821L7']"
+    },
+    "500": {
+        "generated_text": "\"aqua AND bound AND paddle AND supplies\" OR \"aqua AND bound AND paddle\" OR \"aqua AND bound AND supplies\" OR \"aqua AND paddle AND supplies\" OR \"bound AND paddle AND supplies\"",
+        "target": "['B01M1R695U', 'B07J2VJKK1', 'B07XBPGWH6', 'B001C0E47W', 'B0187P09LO', 'B01872PR3C', 'B00NF9WZRE', 'B00N59IJXS']"
+    },
+    "501": {
+        "generated_text": "\"(water weights OR water dumbbells OR water bottles OR weighted objects) AND pool exercise\"",
+        "target": "['B086H7Y2SQ', 'B07P6B7VDD', 'B000LX32WE', 'B07DCL1XGM']"
+    },
+    "502": {
+        "generated_text": "\"(TRX home suspension training kit) AND (home suspension training kit)\"",
+        "target": "['B01LXL27XI', 'B01LXL27XI', 'B00A5ICP32']"
+    },
+    "503": {
+        "generated_text": "\"mlok AND foregrip\"",
+        "target": "['B071RS3QJS', 'B0797GJXYZ', 'B082PX7PW1']"
+    },
+    "504": {
+        "generated_text": "\"AR-style firearms AND charging handle AND ambidextrous\"",
+        "target": "['B074Q36S3Q']"
+    },
+    "505": {
+        "generated_text": "\"ar15 flashlight\" AND (\"mount\" OR \"adapter\" OR \"attachment\") OR \"flashlight mount\"",
+        "target": "['B08NSFRQXR', 'B0928K4S8C', 'B07NV7DNQ1', 'B07XP4LJG3', 'B093WS5224', 'B098QC4DN6', 'B07WMSRMK6']"
+    },
+    "506": {
+        "generated_text": "\"(arcade console OR gaming console OR video game console) AND fitting OR adjustment\"",
+        "target": "['B07SRDH4C8']"
+    },
+    "507": {
+        "generated_text": "\"(as seen on tv) AND (available for purchase)\"",
+        "target": "['B07TYGCVX6', 'B087H6BFD9', 'B01KW07K00', 'B00BYH6C1E']"
+    },
+    "508": {
+        "generated_text": "\"atn AND night vision AND scope\" OR \"atn AND night vision AND sight\" OR \"atn AND night vision AND optical instrument\"",
+        "target": "['B01BYDUV4G', 'B01BYDUZ60']"
+    },
+    "509": {
+        "generated_text": "\"(extended baton) AND (extended OR baton)\"",
+        "target": "['B019RSXVGK']"
+    },
+    "510": {
+        "generated_text": "\"b07hg8b419 AND kids\"",
+        "target": "['B07HG8B419']"
+    },
+    "511": {
+        "generated_text": "\"baby girl AND lebron AND jersey\"",
+        "target": "['B00OX1RRV2']"
+    },
+    "512": {
+        "generated_text": "\"Electra AND rear bike rack AND basket OR bike rack\"",
+        "target": "['B0081FR0VI', 'B003ZMBMQ6', 'B001AYKN84', 'B00ACTMJWQ']"
+    },
+    "513": {
+        "generated_text": "\"sports AND water AND system\" OR \"sports OR water OR system\"",
+        "target": "['B00B1OSU4W', 'B07JBH5ZFT', 'B07T3ZWPVC', 'B07YGPSXGW', 'B081QCHTLT', 'B07CHVYQLY', 'B07BKSNSXW']"
+    },
+    "514": {
+        "generated_text": "\"balega AND running AND socks AND women\"",
+        "target": "['B07YP1LDGC', 'B00HS5BJ4G', 'B07BBYDPL8']"
+    },
+    "515": {
+        "generated_text": "\"ball AND keeper\" OR \"ball AND net\" OR \"keeper AND net\"",
+        "target": "['B07JQT1X2F']"
+    },
+    "516": {
+        "generated_text": "\"kids bike AND paddles\"",
+        "target": "['B00E1XW87K', 'B078NR1HTL', 'B00MJYQ1QW']"
+    },
+    "517": {
+        "generated_text": "\"(tactacam AND reveal AND trail camera)\"",
+        "target": "['B08HLR77F3', 'B086SGFK62', 'B09F72DMWB', 'B07N979ZQM', 'B086PYRG1P', 'B08BTR3S5K', 'B08CL3KC35']"
+    }
+}

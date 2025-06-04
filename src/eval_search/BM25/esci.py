@@ -9,7 +9,7 @@ import sys
 sys.path.append('./')
 
 from src.eval_search.utils import ndcg_at_k
-from src.Lucene.amazon_c4.search import PyseriniMultiFieldSearch
+from src.Lucene.esci.search import PyseriniMultiFieldSearch
 from src.eval_search.utils import extract_answer
 
 

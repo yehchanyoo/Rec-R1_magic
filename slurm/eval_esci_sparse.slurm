@@ -5,7 +5,7 @@
 #SBATCH --mail-user=jchae3@uw.edu
 
 #SBATCH --account=stf
-#SBATCH --partition=gpu-l40,gpu-l40s
+#SBATCH --partition=gpu-l40s
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
