@@ -1,17 +1,12 @@
 import json
 from pyserini.search.lucene import LuceneSearcher
 import time
-# import re # Not used in this snippet
-# import pdb # Not used in this snippet
-
 
 class PyseriniMultiFieldSearch:
     def __init__(self, index_dir="pyserini_index"):
         """Initialize Pyserini MultiField Searcher"""
-        print(f"Initializing LuceneSearcher with index: {index_dir}")
         self.searcher = LuceneSearcher(index_dir)
-        # self.searcher.set_bm25(1.2, 0.75) # Default BM25 in Pyserini is k1=0.9, b=0.4. Set if you need specific values.
-        print("LuceneSearcher initialized.")
+        # self.searcher.set_bm25(1.2, 0.75) 
 
     def search(self, query_str, top_k=10):
         """Perform search across multiple fields"""
@@ -35,7 +30,7 @@ class PyseriniMultiFieldSearch:
                 results.append(("ERROR_PROCESSING_HIT", str(e), 0.0))
         return results
 
-    def batch_search(self, queries_input_list, top_k=10, threads=4): # Renamed 'queries' to 'queries_input_list' for clarity
+    def batch_search(self, queries_input_list, top_k=10, threads=4): 
         """
         Perform parallel search across multiple fields using batch_search
         :param queries_input_list: List of query items. Each item can be a string or a list of strings.
@@ -47,14 +42,14 @@ class PyseriniMultiFieldSearch:
         """
         
         processed_for_pyserini_queries = []
-        for q_item in queries_input_list: # Iterate over the input list
+        for q_item in queries_input_list: 
             if isinstance(q_item, list):
                 processed_q_str = " ".join(q_item)
             else:
                 processed_q_str = str(q_item)
             processed_for_pyserini_queries.append(processed_q_str)
 
-        qids_for_pyserini = [str(i) for i in range(len(queries_input_list))] # Use length of original input list
+        qids_for_pyserini = [str(i) for i in range(len(queries_input_list))] 
         
         batch_results_from_pyserini = self.searcher.batch_search(
             processed_for_pyserini_queries, 
@@ -63,14 +58,14 @@ class PyseriniMultiFieldSearch:
             threads=threads
         )
 
-        final_results = {} # This matches the dictionary name from your traceback
+        final_results = {} 
         
-        # Loop using 'query_item_from_input' which corresponds to 'query' in your traceback's context
+        
         for i, query_item_from_input in enumerate(queries_input_list): 
             pyserini_qid = str(i) 
             hits_for_this_query = batch_results_from_pyserini.get(pyserini_qid, [])
 
-            formatted_results = [] # This matches 'formatted_results' from your traceback
+            formatted_results = [] 
             for hit in hits_for_this_query:
                 try:
                     doc = json.loads(hit.lucene_document.get("raw"))
@@ -81,22 +76,15 @@ class PyseriniMultiFieldSearch:
                     # print(f"Error processing hit for query item {query_item_from_input} (index {i}): {e}.")
                     formatted_results.append(("ERROR_PROCESSING_HIT", str(e), 0.0))
             
-            # --- THIS IS THE CRITICAL FIX FOR YOUR LINE 70 ---
-            # Determine the actual key to use for the 'final_results' dictionary
             actual_dict_key: object
             if isinstance(query_item_from_input, list):
                 actual_dict_key = tuple(query_item_from_input) # Convert list to tuple
             else:
-                actual_dict_key = query_item_from_input # It's already a string or other hashable type
-            
-            # Use 'actual_dict_key' (which is guaranteed hashable) for the dictionary assignment.
-            # This corresponds to your line 70: final_results[query] = formatted_results
+                actual_dict_key = query_item_from_input             
             final_results[actual_dict_key] = formatted_results
-            # --- END CRITICAL FIX ---
 
         return final_results
 
-# Example Usage (from your original file)
 if __name__ == "__main__":
     print("Running PyseriniMultiFieldSearch example...")
     search_system = PyseriniMultiFieldSearch(index_dir='database/esci/pyserini_index')

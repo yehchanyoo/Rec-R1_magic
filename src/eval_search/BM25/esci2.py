@@ -1,17 +1,14 @@
 import argparse
 import json
 import os
-import re # Not strictly used in the provided snippet but often useful
+import re 
 from tqdm import tqdm
-# import pdb # Not used, can be removed if not actively debugging
 
 import sys
-# It's generally better to manage PYTHONPATH or install packages
-# but if this is necessary for Rec-R1 structure:
 sys.path.append('./')
 
 from src.eval_search.utils import ndcg_at_k
-from src.Lucene.esci.search2 import PyseriniMultiFieldSearch # This is where batch_search is defined
+from src.Lucene.esci.search2 import PyseriniMultiFieldSearch 
 from src.eval_search.utils import extract_answer
 
 
@@ -48,7 +45,7 @@ if __name__ == '__main__':
             # print(f"Warning: extract_answer failed for sample_id {sample_id}, query: {query_from_model_output}. Error: {e}. Using raw generated_text.")
             pass
 
-        target_raw = value_dict.get('target') # Use .get() for safety
+        target_raw = value_dict.get('target') 
         if isinstance(target_raw, str):
             try:
                 target = eval(target_raw) 
@@ -58,9 +55,9 @@ if __name__ == '__main__':
                 target = [str(target_raw)] 
         elif isinstance(target_raw, list):
             target = target_raw
-        elif target_raw is not None: # Handle cases like numbers, bools if they occur
+        elif target_raw is not None: 
              target = [str(target_raw)]
-        else: # target is None or missing
+        else: 
             # print(f"Warning: Target is missing or None for sample_id {sample_id}. Using empty list.")
             target = []
 
@@ -83,10 +80,8 @@ if __name__ == '__main__':
         scores_map = {item['id']: item['scores'] for item in batch}
 
         try:
-            # search_results_from_system is the dictionary returned by batch_search.
-            # Its keys are strings or tuples (if original query was a list).
             search_results_from_system = search_system.batch_search(queries_for_batch_search, top_k=topk, threads=16)
-        except Exception as e: # Catch a broader range of exceptions from batch_search if needed
+        except Exception as e:
             print(f"\nCRITICAL ERROR during search_system.batch_search: {e}")
             print("This might indicate an issue within the Pyserini call or query processing inside batch_search.")
             print(f"Problematic queries in this batch might be: {[q for q in queries_for_batch_search if isinstance(q, list)]}")
@@ -98,35 +93,26 @@ if __name__ == '__main__':
 
 
         for original_query_idx_in_batch, sample_id in enumerate(ids_in_batch):
-            # This is the query item as it was prepared and sent to batch_search (could be str or list)
-            # This variable 'query' in your original traceback corresponds to this:
             query_as_prepared = queries_for_batch_search[original_query_idx_in_batch]
 
-            # --- THIS IS THE CRITICAL FIX for the TypeError on line 60 ---
-            # Create the key for retrieving results from search_results_from_system.
-            # This *must* match how keys were created in search.py's batch_search method.
             retrieval_key: object
             if isinstance(query_as_prepared, list):
                 retrieval_key = tuple(query_as_prepared) # Convert list to tuple
             else:
                 retrieval_key = query_as_prepared # It's already a string or other hashable type
             
-            # Use the 'retrieval_key' (which is guaranteed hashable) for .get()
-            # This corresponds to your line 60: search_results.get(query, [])
             retrieved_hits_list = search_results_from_system.get(retrieval_key, [])
-            # --- END CRITICAL FIX ---
             
             retrieved_doc_ids = [item[0] for item in retrieved_hits_list] 
 
             query_as_string_for_results_key = str(query_as_prepared)
 
-            current_target = targets_map.get(sample_id, []) # Use .get for safety
-            current_scores = scores_map.get(sample_id, []) # Use .get for safety
+            current_target = targets_map.get(sample_id, []) 
+            current_scores = scores_map.get(sample_id, []) 
             
-            # Ensure current_target and retrieved_doc_ids are lists for ndcg_at_k
             if not isinstance(current_target, list): current_target = []
             if not isinstance(retrieved_doc_ids, list): retrieved_doc_ids = []
-            if len(current_scores) != len(current_target): # Ensure scores align with target length
+            if len(current_scores) != len(current_target): 
                 current_scores = [1] * len(current_target)
 
 
