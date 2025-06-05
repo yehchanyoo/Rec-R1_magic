@@ -1,5 +1,5 @@
 DOMAIN_NAME=$1
-MODEL_PATH=checkpoints/Rec-R1-Amazon_Review-Mix/Amazon_review-qwen2.5-3b-inst-grpo-2gpus/actor/global_step_1000
+MODEL_PATH=checkpoints/adv-ml-project/matching-qwen3b-inst-ppo/actor/global_step_400
 DATA_PATH=data/amazon_review/inst/test.parquet
 SAVE_DIR=results/amazon_review
 MODEL_NAME=Rec-r1-amazon-review
