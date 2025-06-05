@@ -53,7 +53,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.test_freq=10 \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
-    trainer.total_training_steps=400 \
+    #trainer.total_training_steps=400 \   # Recommended number of steps if restricted in performance
     trainer.total_epochs=1 2>&1 | tee exp_log/$EXPERIMENT_NAME-grpo-verl_2gpus_$DATE.log
 
 ray stop
