@@ -26,6 +26,3 @@ python src/Lucene/amazon_review/search.py
 
 # Make the parquets read-only
 chmod a-w data/amazon_review/inst/*.parquet
-
-# Train
-bash scripts/repro/train_rec-amazon_review_3b.sh
