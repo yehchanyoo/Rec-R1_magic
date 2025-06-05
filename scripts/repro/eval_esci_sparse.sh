@@ -17,6 +17,6 @@ for DOMAIN in "${DOMAINS[@]}"; do
         --save_dir $SAVE_DIR
 
     echo "$DOMAIN Score"
-    python src/eval_search/BM25/esci.py \
+    python src/eval_search/BM25/esci2.py \
         --res_path $TEST_FILE_PATH
 done

@@ -53,4 +53,4 @@ python -m verl.trainer.main_ppo \
     trainer.test_freq=10 \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$EXPERIMENT_NAME \
-    trainer.total_epochs=1 2>&1 | tee logs/esci_sparse_3b_grpo-verl_2gpu_${DATE}.log
+    trainer.total_epochs=5 2>&1 | tee logs/esci_sparse_3b_grpo-verl_2gpu_${DATE}.log
