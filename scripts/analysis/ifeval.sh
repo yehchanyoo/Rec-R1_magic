@@ -1,6 +1,6 @@
 # MODEL_NAME=checkpoints/qwen-sft-full-no_reason/checkpoint-562
 # MODEL_NAME=checkpoints/qwen-sft-full-no_reason_no_json/checkpoint-562
-MODEL_NAME=checkpoints/qwen-sft-full-with_reason_no_json/checkpoint-562
+MODEL_NAME=checkpoints/adv-ml-project/qwen2.5-3b-inst-ppo-esci_sparse-20250605_015919/actor/global_step_700
 
 echo $MODEL_NAME
 

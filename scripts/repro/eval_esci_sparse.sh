@@ -1,5 +1,5 @@
 DOMAINS=('Video_Games' 'Baby_Products' 'Office_Products' 'Sports_and_Outdoors')
-MODEL_PATH=/home/rapids/Rec-R1_magic/checkpoints/adv-ml-project/qwen2.5-3b-inst-ppo-esci_sparse-20250603_211055/actor/global_step_140
+MODEL_PATH=/home/rapids/Rec-R1_magic/checkpoints/adv-ml-project/qwen2.5-3b-inst-ppo-esci_sparse-20250605_015919/actor/global_step_700
 DATA_PATH=data/esci/inst/sparse/subset/test.parquet
 MODEL_NAME=rec-r1
 SAVE_DIR=results/repro/esci
