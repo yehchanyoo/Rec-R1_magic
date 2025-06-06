@@ -58,6 +58,7 @@ if __name__ == '__main__':
     
     ndcg = []
     batch_size = 100
+    K = 100
     
     for i in tqdm(range(0, len(test_data), batch_size)):
         batch = test_data[i:i+batch_size]
@@ -68,6 +69,7 @@ if __name__ == '__main__':
         
         for query in queries:
             retrieved = [result[0] for result in results.get(query, [])]
-            ndcg.append(ndcg_at_k(retrieved, targets[query], 10))
+            ndcg.append(ndcg_at_k(retrieved, targets[query], K))
     
-    print(f"Average NDCG@10: {sum(ndcg) / len(ndcg)}")
+    print(f"Average NDCG@{K}: {sum(ndcg) / len(ndcg)}")
+    print(f"Max NDCG@{K}: {max(ndcg)}")

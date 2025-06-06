@@ -24,7 +24,7 @@ if __name__ == '__main__':
     if args.model_name == 'blair-base':
         model_path = "hyp1231/blair-roberta-base"
         index_path = f"data/amazon_c4/raw/dense_index/blair-base/faiss_hnsw_index.bin"
-        doc_ids_path = f"data/amazon_c4/raw/cache/doc_ids.npy"
+        doc_ids_path = f"data/amazon_c4/raw/cache/Amazon-C4.npy"
     elif args.model_name == 'blair-large':
         model_path = "hyp1231/blair-roberta-large"
         index_path = f"data/amazon_c4/raw/dense_index/blair-large/faiss_hnsw_index.bin"
@@ -99,4 +99,4 @@ if __name__ == '__main__':
             retrieved = [result[0] for result in results.get(query, [])]
             ndcg.append(ndcg_at_k(retrieved, targets[query], topk, scores[query]))
     
-    print(f"Average NDCG@10: {sum(ndcg) / len(ndcg)}")
+    print(f"Average NDCG@{topk}: {sum(ndcg) / len(ndcg)}")
