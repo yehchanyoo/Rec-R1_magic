@@ -37,7 +37,7 @@ From: nvcr.io/nvidia/rapidsai/notebooks:25.04-cuda12.8-py3.12
         seaborn \
         blis \
         "transformers<=4.52" \
-        hf_xet 
+        hf_xet lm-eval langdetect immutabledict 
 
     echo ">>> Installing utility packages..."
     uv pip install --system --no-cache-dir wandb py-spy pyserini

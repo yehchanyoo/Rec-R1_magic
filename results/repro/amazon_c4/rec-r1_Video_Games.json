@@ -1,0 +1,602 @@
+{
+    "0": {
+        "generated_text": "(\"(\"cushion comfort non scratch\" site:com\")|(\"cushion head larger surface area\" site:com\")).&(\"cushion affordable\")))+(\"cushion recommendation\"))",
+        "target": "B0C5LT9S93"
+    },
+    "1": {
+        "generated_text": "(\"(\"mouse feel matte\" site:com\")|(\"mouse soft touch\" site:com\")).&(\"mouse finish matte\")))+(\"mouse feel smooth\"))",
+        "target": "B071HVWD55"
+    },
+    "2": {
+        "generated_text": "(\"(\"mechanical keyboard\" site:com\")|(\"mechanical keyboard\" site:com\")))+(\"hot swappable keyboard\"))",
+        "target": "B09MRGG5C4"
+    },
+    "3": {
+        "generated_text": "\n{\n    \"query\": \"(\\\"(\\\"game sealed american version manual\\\" site:com\\\")|(\\\"game sealed american version bugs\\\" site:com\\\")).&(\\\"game enjoyment platino blanco y negro\\\"))\"\n}\"\n",
+        "target": "B0B2X4BMV2"
+    },
+    "4": {
+        "generated_text": "(\"(\"Nintendo Switch Lite case protection\" site:com\")|(\"Nintendo Switch Lite case comfort\" site:com\")).&(\"Nintendo Switch Lite case grip\")))+(\"Nintendo Switch Lite case display protection\")",
+        "target": "B09GF8WG61"
+    },
+    "5": {
+        "generated_text": "(\"(\"headset gaming turtle beach\" site:com\")|(\"headset gaming affordable\" site:com\")).&(\"headset gaming sound quality\")))-(\"headset gaming turtle beach 5.1\")",
+        "target": "B0BKQPPD4T"
+    },
+    "6": {
+        "generated_text": "(\"(\"charging station battery\" site:com\")|(\"battery charging station\" site:com\")).&(\"charging station fan\")))+(\"charging station car\"))",
+        "target": "B08VN2LB3B"
+    },
+    "7": {
+        "generated_text": "(\"(\"vr charger working\" site:com\")|(\"vr charger good job\" site:com\")).&(\"vr charger battery\")))-('site:gov')-(('site:org')))",
+        "target": "B0BRXV2R1J"
+    },
+    "8": {
+        "generated_text": "(\"\"case scarlet violet switch\", \"wrist strap storage\")|(\"\"scarlet violet switch case\")))+(\"wrist strap storage case\")",
+        "target": "B0BPM13LPG"
+    },
+    "9": {
+        "generated_text": "(\"(\"mouse durable cord\" site:com\")|(\"mouse no light\" site:com\")).&(\"mouse cord\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B07VHHPJBV"
+    },
+    "10": {
+        "generated_text": "(\"(\"nintendo n64 adapter\" site:com\")|(\"n64 to pc adapter\" site:com\")).&(\"n64 no lag adapter\")))+(\"n64 to ps4 adapter\"))",
+        "target": "B0B9C1NPYG"
+    },
+    "11": {
+        "generated_text": "(\"(\"gadget clicky sound keyboard\" site:com\")|(\"rgb keyboard long battery\" site:com\")).&(\"keyboard sleep feature\")))+(\"clicky keyboard rgb lights\")",
+        "target": "B09N9D7JGS"
+    },
+    "12": {
+        "generated_text": "(\"(\"comfortable product battery life\" site:com\")|(\"responsive seller product battery life\" site:com\")).&(\"comfortable product battery life\" site:com\"))",
+        "target": "B09JNR4Y15"
+    },
+    "13": {
+        "generated_text": "(\"(\"headset noise cancellation\" site:com\")|(\"headset comfort\" site:com\")).&(\"headset durable\" site:com\")))+(\"headset microphone bendable\"))",
+        "target": "B0BYVN9ZK2"
+    },
+    "14": {
+        "generated_text": "(\"(\"headset comfortable communication\" site:com\")|(\"headset ps4 controller\" site:com\")).&(\"headset affordable\")))-(\"headset gaming only\"))",
+        "target": "B08GX4XC98"
+    },
+    "15": {
+        "generated_text": "(\"(\"comfortable strap replacement\" site:com\")|(\"adjustable strap replacement\" site:com\")).&(\"straps for headache relief\")))+(\"boy strap replacement\"))",
+        "target": "B0C948SGYT"
+    },
+    "16": {
+        "generated_text": "(\"(\"budget keyboard customize keycaps\" site:com\")|(\"keyboard flip up stand\" site:com\")).&(\"keyboard rgb backlighting\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B089GR6T6M"
+    },
+    "17": {
+        "generated_text": "(\"(\"gaming mouse adjustable colors\" site:com\")|(\"gaming mouse variety colors\" site:com\")).&(\"gaming mouse quality reviews\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0C12FX4DH"
+    },
+    "18": {
+        "generated_text": "(\"(\"apex legends gamepad extra buttons\" site:com\")|(\"apex legends gamepad durability\" site:com\")).&(\"gamepad extra buttons apex legends\")))+(\"gamepad durability apex legends\")",
+        "target": "B09KHV33VJ"
+    },
+    "19": {
+        "generated_text": "(\"(\"headset gaming wireless\" site:com\")|(\"headset gaming microphone\" site:com\")).&(\"headset gaming lights\")))+(\"headset gaming review\")",
+        "target": "B0C4F9JGTJ"
+    },
+    "20": {
+        "generated_text": "(\"(\"product review toy grandson\" site:com\")|(\"product review phone storage\" site:com\")).&(\"product review toy boy\")))+(\"product review camera phone\"))",
+        "target": "B0BS49QC99"
+    },
+    "21": {
+        "generated_text": "(\"(\"keyboard feel\" site:com\")|(\"keyboard good feel\" site:com\")).&(\"keyboard no wrist rest\")))+(\"keyboard type:de\"))",
+        "target": "B0B6NS163P"
+    },
+    "22": {
+        "generated_text": "(\"(\"charger original nintendo switch\" site:com\")|(\"charger switch replacement\" site:com\")).&(\"charger car\")))+(\"charger switch replacement site:com\")",
+        "target": "B0B3MSDQ36"
+    },
+    "23": {
+        "generated_text": "(\"(\"keyboard sturdy\" site:com\")|(\"keyboard reasonably priced\" site:com\")).&(\"keyboard satisfaction\")))+(\"keyboard review\"))",
+        "target": "B0BB7YK8YX"
+    },
+    "24": {
+        "generated_text": "(\"(\"75% keyboard plastic construction\" site:com\")|(\"75% keyboard boutique switches\" site:com\")).&(\"plastic construction keyboard bluetooth\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0BGN49NZD"
+    },
+    "25": {
+        "generated_text": "(\"(\"dock steam deck\" site:com\")|(\"steam deck dock\" site:com\")).&(\"dock usb-a\")))+(\"dock blue light\"))",
+        "target": "B0C749BLSL"
+    },
+    "26": {
+        "generated_text": "(\"(\"organizer switch games\" site:com\")|(\"switch organizer pack\" site:com\")).&(\"console game controller organizer\" site:com\"))",
+        "target": "B0BRV3T4CW"
+    },
+    "27": {
+        "generated_text": "(\"(\"joy cons secure\" site:com\")|(\"joy cons comfort\" site:com\")).&(\"controller stability site:com\")))+(\"joy cons grip\"))",
+        "target": "B08KHFBP4S"
+    },
+    "28": {
+        "generated_text": "(\"(\"ps4 pro cooling pad\" site:com\")|(\"ps4 pro cooling solution\" site:com\")).&(\"durable ps4 pro cooler\")))+(\"ps4 pro cooling pad replacement\"))",
+        "target": "B079FPFV3X"
+    },
+    "29": {
+        "generated_text": "(\"(\"home office organization\" site:com\")|(\"music studio organization\" site:com\")).&(\"headphones organizer\")))+(\"cable organizer desk\"))",
+        "target": "B0BLTV2BKZ"
+    },
+    "30": {
+        "generated_text": "(\"(\"controller pc switch phone\" site:com\")|(\"controller multi device\" site:com\")).&(\"controller save money\")))+(\"controller compatible pc switch phone\")",
+        "target": "B0B97J6RP5"
+    },
+    "31": {
+        "generated_text": "(\"(\"cardboard gaming kit\" site:com\")|(\"cardboard gaming kits\" site:com\")).&(\"interactive games site:com\")))+(\"cardboard games site:com\")",
+        "target": "B07GZPHMB1"
+    },
+    "32": {
+        "generated_text": "(\"(\"grip case lock\" site:com\")|(\"device case grip lock\" site:com\")).&(\"device interchangeable grips\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B09QY1GQV9"
+    },
+    "33": {
+        "generated_text": "(\"(\"console travel\" site:com\")|(\"console small\" site:com\")).&(\"console power\")))+(\"console multimedia center\")",
+        "target": "B0BCXJ8BF4"
+    },
+    "34": {
+        "generated_text": "(\"(\"sturdy case games\" site:com\")|(\"game case appearance\")))+(\"travel case games\"))",
+        "target": "B0C5D13QFC"
+    },
+    "35": {
+        "generated_text": "(\"(\"stars stocking stuffer\" site:com\")|(\"stars hanukkah gifts\" site:com\")).&(\"stars adhesive\")))+(\"stars stocking stuffers\"))",
+        "target": "B0B9V7QGH7"
+    },
+    "36": {
+        "generated_text": "(\"(\"small form factor keyboard gaming\" site:com\")|(\"speed silver keyboard\" site:com\")).&(\"small form factor keyboard office\")))+(\"small form factor keyboard price\"))",
+        "target": "B0BBWK1XWT"
+    },
+    "37": {
+        "generated_text": "(\"(\"keyboard quality\" site:com\")|(\"keyboard affordable\" site:com\")).&(\"keyboard noise level low\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B09TWBP3SD"
+    },
+    "38": {
+        "generated_text": "(\"(\"game\" site:com\")|(\"play\" site:com\")).&(\"game not:free\"))",
+        "target": "B09BC13G2X"
+    },
+    "39": {
+        "generated_text": "(\"(\"case small\" site:com\")|(\"case game\" site:com\")).&(\"pockets site:com\")))+(\"case organizer\"))",
+        "target": "B081243BT6"
+    },
+    "40": {
+        "generated_text": "(\"(\"headphones sound quality\" site:com\")|(\"headphones detachable mic\" site:com\")).&(\"headphones 2 audio output devices\")))+(\"headphones steelseries arctis 7 replacement\")",
+        "target": "B086M4DQ7R"
+    },
+    "41": {
+        "generated_text": "(\"(\"controller type c\" site:com\")|(\"controller nintendo switch\" site:com\")).&(\"controller long battery\")))+(\"controller type c type:nintendo-switch\")",
+        "target": "B0B6CP19DF"
+    },
+    "42": {
+        "generated_text": "(\"(\"mouse wireless adjustable sensitivity\" site:com\")|(\"mouse wireless no wires\" site:com\")).&(\"mouse lighting\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0C4L46QKC"
+    },
+    "43": {
+        "generated_text": "(\"(\"fun game so tn\" site:com\")|(\"side scrolling game graphics\")))+(\"old school graphics\"))",
+        "target": "B07895ZWWT"
+    },
+    "44": {
+        "generated_text": "(\"(\"ps5 hiding cover\" site:com\")|(\"ps5 installation cover\" site:com\")).&(\"ps5 mount cover\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B08VVZYRV6"
+    },
+    "45": {
+        "generated_text": "(\"(\"adorable gifts\" site:com\")|(\"adorable gifts\" site:com\")|(\"adorable gifts\" site:com\")).&(\"little black grips\")))+(\"fit perfectly\"))",
+        "target": "B09DG9J3FP"
+    },
+    "46": {
+        "generated_text": "(\"(\"metal gear solid vr missions\" site:com\")|(\"metal gear solid vr site:com\")))+(\"metal gear solid vr missions code redeem\"))",
+        "target": "B00KTZELMY"
+    },
+    "47": {
+        "generated_text": "(\"(\"controller accessory color\" site:com\")|(\"controller accessory value\" site:com\")).&(\"controller accessory surprise gift\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B08V527G5J"
+    },
+    "48": {
+        "generated_text": "(\"(\"hori protector switch lite\" site:com\")|(\"switch lite protector\" site:com\")).&(\"hori protector reviews\")))+(\"switch lite protector amazon\")",
+        "target": "B08S5YCZ6Q"
+    },
+    "49": {
+        "generated_text": "(\"(\"headset sound quality\" site:com\")|(\"headset no additional apps\" site:com\")).&(\"headset metal headband\")))+(\"headset microphone issues\")))-(\"headset fake leather\"))",
+        "target": "B0BYVN9ZK2"
+    },
+    "50": {
+        "generated_text": "(\"(\"comfortable product battery pack\" site:com\")|(\"high quality product battery pack\" site:com\")).&(\"quick shipping product battery pack\" site:com\"))",
+        "target": "B0BZNL6P27"
+    },
+    "51": {
+        "generated_text": "(\"\"controller clutter wall mount\" site:com\")|(\"\"controller organization desk\" site:com\")|(\"\"wall mount controller stand\" site:com\")))+(\"controller organizer desk\")",
+        "target": "B09GPF775B"
+    },
+    "52": {
+        "generated_text": "(\"(\"mouse laptop quick connect\" site:com\")|(\"mouse sensitivity response\" site:com\")).&(\"mouse laptop quick connect site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0BZJ1N98L"
+    },
+    "53": {
+        "generated_text": "(\"(\"switch accessories grip comfort\" site:com\")|(\"switch connect accessory grip\" site:com\")).&(\"comfortable switch grip accessory\")))+(\"switch console connection accessory\")",
+        "target": "B0C85RYTB3"
+    },
+    "54": {
+        "generated_text": "(\"(\"controller stand headset\" site:com\")|(\"controller stand headset organizer\" site:com\")).&(\"controller stand assembly\")))+(\"controller stand spare headset\")",
+        "target": "B0BML7CYJY"
+    },
+    "55": {
+        "generated_text": "(\"(\"keyboard backlight color\" site:com\")|(\"keyboard quick shipping\" site:com\")).&(\"keyboard customer service\")))+(\"keyboard easy use\")",
+        "target": "B0B7B7WQY7"
+    },
+    "56": {
+        "generated_text": "(\"(\"fix ps5 controller drift right stick\" site:com\")|(\"ps5 controller right stick fix drift\" site:com\")).&(\"soldering ps5 controller fix drift\")))-('review' OR 'user')",
+        "target": "B09YQ22XDX"
+    },
+    "57": {
+        "generated_text": "(\"(\"cute headphones ps4\" site:com\")|(\"headphones with microphone ps4\" site:com\")).&(\"foldable headphones\")))+(\"comfortable headphones\"))",
+        "target": "B0BL7XB1KG"
+    },
+    "58": {
+        "generated_text": "(\"(\"replacement xbox remote\" site:com\")|(\"xbox remote protector\" site:com\")).&(\"remote protection cover\" site:com\")))+(\"xbox streaming remote\"))",
+        "target": "B097CZC291"
+    },
+    "59": {
+        "generated_text": "(\"(\"headset bluetooth audio mic\" site:com\")|(\"headset range discord\" site:com\")).&(\"headset price $40\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B09NF81J5G"
+    },
+    "60": {
+        "generated_text": "(\"(\"game accessory\" site:com\")|(\"road trip toy\" site:com\")).&(\"product review\":\"best\")))+(\"product review\":\"repeat purchase\")",
+        "target": "B09B5CTHTC"
+    },
+    "61": {
+        "generated_text": "(\"(\"open world action rpg dark souls\" site:com\")|(\"dark souls alternative open world\" site:com\")).&(\"forgiving dark souls game open world\")))+(\"dark souls clone open world\"))",
+        "target": "B09N77RFYL"
+    },
+    "62": {
+        "generated_text": "(\"(\"power strip convenience\" site:com\")|(\"power strip space\" site:com\")).&(\"power strip cool look\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0BRZX8VDW"
+    },
+    "63": {
+        "generated_text": "\n{\n    \"query\": \"(\\\"(\\\"adorable sanrio animal crossing villagers\\\" site:com\\\")|(\\\"sanrio my melody keroppi villagers\\\" site:com\\\")).&(\\\"animal crossing villager designs pompompurin cinnamoroll\\\"))\"\n}\"\n",
+        "target": "B08VJQBSY3"
+    },
+    "64": {
+        "generated_text": "(\"(\"prime amazon invite gift\" site:com\")|(\"amazon prime gift card\" site:com\")).&((\"amazon prime membership\")))-('amazon prime membership free trial')",
+        "target": "B0B16656Z2"
+    },
+    "65": {
+        "generated_text": "(\"(\"ps4 controller charger\" site:com\")|(\"ps4 controller charging\" site:com\")).&(\"easy charge ps4 controller\")))+(\"ps4 controller charging cable\")",
+        "target": "B07CTHLS2L"
+    },
+    "66": {
+        "generated_text": "(\"(\"magnetic screwdriver nintendo\" site:com\")|(\"nintendo cartridge storage\" site:com\")).&(\"magnetic screwdriver gamecube\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B01N3UO3V7"
+    },
+    "67": {
+        "generated_text": "(\"(\"microphone budget\" site:com\")|(\"microphone touch mute\" site:com\")).&(\"microphone compact design\")))+(\"microphone black all\"))",
+        "target": "B0C3QHBQS2"
+    },
+    "68": {
+        "generated_text": "(\"(\"arcade game childhood memories\" site:com\")|(\"arcade game game room\" site:com\")).&(\"arcade game add to collection\")))+(\"arcade game 80s\"))",
+        "target": "B09TQ6ZKYS"
+    },
+    "69": {
+        "generated_text": "(\"(\"controller nintendo switch\" site:com\")|(\"nintendo switch pro controller\" site:com\")).&(\"d-pad\")))+(\"controller durability\"))",
+        "target": "B0BXJTMKNM"
+    },
+    "70": {
+        "generated_text": "\n{\n    \"query\": \"(\\\"(\\\"easy install product\\\" site:com\\\")|(\\\"well packaged product\\\" site:com\\\")).&(\\\"product delivery wrong address\\\" site:com\\\"))\"\n}\"\n",
+        "target": "B0BYD6XSCS"
+    },
+    "71": {
+        "generated_text": "(\"(\"game ever\" site:com\")|(\"game everyone should try\" site:com\")).&(\"best game ever\")))+(\"game review\"))",
+        "target": "B073KR8N21"
+    },
+    "72": {
+        "generated_text": "(\"(\"controller no battery\" site:com\")|(\"remote control no batteries\" site:com\")).&(\"son remote control\")))+(\"no battery remote control\")",
+        "target": "B07DPNYGST"
+    },
+    "73": {
+        "generated_text": "(\"(\"case well made\" site:com\")|(\"case good design\")))+(\"case withstand everyday use\"))",
+        "target": "B09XMKF245"
+    },
+    "74": {
+        "generated_text": "(\"(\"dust shields bulk\" site:com\")|(\"dust shields shipping speed\" site:com\")).&(\"dust shields price affordability\"))",
+        "target": "B08Z766ZMZ"
+    },
+    "75": {
+        "generated_text": "(\"(\"gaming controller turbo mode\" site:com\")|(\"gaming controller rapid fire\" site:com\")).&(\"controller turbo mode price\")))+(\"gaming controller turbo mode rapid fire\")",
+        "target": "B09WTGRKB9"
+    },
+    "76": {
+        "generated_text": "(\"(\"keyboard gateron pro yellow\" site:com\")|(\"keyboard gateron pro yellow\" site:com\")|(\"gateron pro yellow keyboard\" site:com\")).&(\"keyboard brightness\")))+(\"keyboard arrow keys\"))",
+        "target": "B09Y4JBVH7"
+    },
+    "77": {
+        "generated_text": "(\"(\"sturdy case games\" site:com\")|(\"case for physical games\" site:com\")).&(\"case for small items\")))+(\"case storage\"))",
+        "target": "B07JHM3MT8"
+    },
+    "78": {
+        "generated_text": "(\"(\"headphones cute\" site:com\")|(\"headphones style\" site:com\")).&(\"headphones comfort\")))+(\"headphones quality\")",
+        "target": "B0BTFX4STP"
+    },
+    "79": {
+        "generated_text": "(\"(\"rgb keyboard mechanical sound\" site:com\")|(\"keyboard rgb mechanical sound\" site:com\")).&(\"keyboard rgb mechanical feel\" site:com\")))-(\"price:expensive\")",
+        "target": "B0BRKPXQN2"
+    },
+    "80": {
+        "generated_text": "(\"(\"headgear adjustment\" site:com\")|(\"comfortable headgear\" site:com\")).&(\"group use headgear\")))+(\"headgear adjustment speed\")",
+        "target": "B0B7RKCWYP"
+    },
+    "81": {
+        "generated_text": "(\"(\"headphones headphones for kids\" site:com\")|(\"headphones cute\" site:com\")).&(\"headphones amazon fire tablet\")))-(\"site:gov\"))",
+        "target": "B0BMLVYQZD"
+    },
+    "82": {
+        "generated_text": "(\"(\"wireless gaming headset surround sound\" site:com\")|(\"gaming headset bluetooth surround sound\" site:com\")).&(\"headset usb dongle surround sound\"))",
+        "target": "B0BXR7J5JV"
+    },
+    "83": {
+        "generated_text": "(\"(\"games run flawlessly\" site:com\")|(\"games great performance\" site:com\")).&(\"games fast delivery\")))+(\"games affordable price\"))",
+        "target": "B0C46LPLWP"
+    },
+    "84": {
+        "generated_text": "(\"(\"cool backpack switch\" site:com\")|(\"cute backpack switch\" site:com\")).&(\"backpack compact switch\")))+(\"backpack charger switch\")",
+        "target": "B0B5M8KL5S"
+    },
+    "85": {
+        "generated_text": "(\"(\"lightweight case switch oled\" site:com\")|(\"switch oled case\" site:com\")).&(\"screen protector case\")))+(\"case snap on oled\")",
+        "target": "B0B14C87PK"
+    },
+    "86": {
+        "generated_text": "(\"(\"case switch lite\" site:com\")|(\"screen protector switch lite\" site:com\")).&(\"thumb grips switch lite\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B09Z6WP1PG"
+    },
+    "87": {
+        "generated_text": "(\"\"board game more than four players\" site:com\")|(\"\"board game quick easy\" site:com\")|(\"\"board game no reading\" site:com\")))+(\"board game flower garden\"))",
+        "target": "B08G8WCQG3"
+    },
+    "88": {
+        "generated_text": "(\"(\"gaming controller gift\" site:com\")|(\"gaming controller quick shipping\" site:com\")).&(\"controller gift son\")))+(\"controller quick shipping\"))",
+        "target": "B076CRSSZV"
+    },
+    "89": {
+        "generated_text": "(\"(\"vertical storage desk\" site:com\")|(\"switch docking station storage\" site:com\")).&(\"desk vertical storage\")))+(\"controller storage desk\")",
+        "target": "B094Q1Q3WJ"
+    },
+    "90": {
+        "generated_text": "(\"(\"lens protector phone\" site:com\")|(\"phone lens protector\" site:com\")).&(\"durable lens protector phone\")))+(\"screen protector phone\"))",
+        "target": "B0BRF6PX4Z"
+    },
+    "91": {
+        "generated_text": "(\"(\"game story characters\" site:com\")|(\"game impressive graphics\" site:com\")).&(\"game voice acting\")))+(\"game water graphics\"))",
+        "target": "B09XJ6X8GX"
+    },
+    "92": {
+        "generated_text": "(\"(\"charger replacement\" site:com\")|(\"charger replacement\" site:com\")|(\"charger replacement product\" site:com\")).&(\"product replacement company\" site:com\"))",
+        "target": "B09JG25LKR"
+    },
+    "93": {
+        "generated_text": "(\"(\"case switch protector\" site:com\")|(\"switch case drop protection\" site:com\")).&(\"case amazing switch\")))+(\"switch case protection\"))",
+        "target": "B08N5M7H4X"
+    },
+    "94": {
+        "generated_text": "(\"(\"case nintendo switch\" site:com\")|(\"nintendo switch case\" site:com\")).&((\"case sturdy\")))-(\"site:gov\")-(\"site:org\"))",
+        "target": "B0BZDCSZ5R"
+    },
+    "95": {
+        "generated_text": "(\"(\"grandson gift\" site:com\")|(\"grandson present\" site:com\")).&(\"excellent purchase\")))+(\"product review\"))",
+        "target": "B08KB5FBH8"
+    },
+    "96": {
+        "generated_text": "(\"(\"xbox one s stand\" site:com\")|(\"xbox one s stand alternative\" site:com\")).&(\"xbox one s stand cheap\")))+(\"xbox one s stand quality\")",
+        "target": "B08CJK7KMP"
+    },
+    "97": {
+        "generated_text": "(\"(\"switch charger dock\" site:com\")|(\"switch charger dock amazon\")))+(\"charger switch dock\"))",
+        "target": "B0C497PLXP"
+    },
+    "98": {
+        "generated_text": "(\"(\"replacement oculus quest 2 head strap\" site:com\")|(\"oculus quest 2 head strap replacement\" site:com\")).&(\"head strap padding\")))+(\"hidden usb-c cable head strap\"))",
+        "target": "B0B9H7FQXL"
+    },
+    "99": {
+        "generated_text": "(\"(\"plug and play gaming device trustmaster\")|(\"gaming device compatibility\")))+(\"gaming device build quality\"))",
+        "target": "B08N6NCR3Q"
+    },
+    "100": {
+        "generated_text": "(\"(\"steelbook slip cover paper\" site:com\")|(\"steelbook slip cover clear\" site:com\")).&(\"steelbook paper cover\")))+(\"steelbook slip cover transparent\")",
+        "target": "B0BFHY5FCP"
+    },
+    "101": {
+        "generated_text": "(\"(\"quality product affordability\" site:com\")|(\"surprisingly low price packaging\" site:com\")).&(\"seller 5 stars\" site:com\")))+(\"product review site:com\")",
+        "target": "B08MBG5254"
+    },
+    "102": {
+        "generated_text": "(\"(\"accessory headgear storage\" site:com\")|(\"headgear storage accessory\" site:com\")).&(\"weighted base accessory\")))+(\"rotating light accessory\"))",
+        "target": "B0C6LZMDTD"
+    },
+    "103": {
+        "generated_text": "(\"(\"carry case magnetic closure\" site:com\")|(\"carry case silicone lining\" site:com\")).&(\"carry case price reasonable\")))+(\"carry case exterior design\"))",
+        "target": "B0BBM17XLZ"
+    },
+    "104": {
+        "generated_text": "(\"(\"xbox remote bed room\" site:com\")|(\"xbox tv app remote\" site:com\")).&(\"xbox remote control\")))+(\"xbox tv app remote bed room\")",
+        "target": "B0C7BN9G35"
+    },
+    "105": {
+        "generated_text": "(\"(\"rechargeable remote control\" site:com\")|(\"rechargeable remote controls\" site:com\")).&(\"gaming remote control\")))+(\"remote control rechargeable battery\"))",
+        "target": "B07ZCM2BN4"
+    },
+    "106": {
+        "generated_text": "(\"(\"screen installation\" site:com\")|(\"touch screen\" site:com\")).&(\"screen easy install\")))+(\"screen bubbles disappear\")",
+        "target": "B0BM9B1XMN"
+    },
+    "107": {
+        "generated_text": "(\"(\"controller nintendo switch\" site:com\")|(\"hall effect controller\" site:com\")).&(\"controller pc\")))+(\"controller pro nintendo switch\"))",
+        "target": "B0B97J6RP5"
+    },
+    "108": {
+        "generated_text": "(\"(\"charging stand illuminated cable\" site:com\")|(\"charging stand glass mount\" site:com\")).&(\"charging stand suction cup\")))+(\"charging stand tv stand\"))",
+        "target": "B08W22VD8K"
+    },
+    "109": {
+        "generated_text": "(\"(\"keyboard lighting\" site:com\")|(\"music video keyboard\" site:com\")).&(\"keyboard girl\")))+(\"keyboard video\"))",
+        "target": "B09KNG2LHC"
+    },
+    "110": {
+        "generated_text": "(\"(\"headphones gaming\" site:com\")|(\"headphones music\" site:com\")).&(\"headphones movies\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B09J25L4XS"
+    },
+    "111": {
+        "generated_text": "(\"(\"wire sturdy connection\" site:com\")|(\"wire solid connection\" site:com\")).&(\"wire oculus site:com\")))+(\"wire phone tablet xbox site:com\")",
+        "target": "B09YTY4ZY4"
+    },
+    "112": {
+        "generated_text": "(\"(\"controller high quality\" site:com\")|(\"controller map l r sticks\" site:com\")).&(\"controller no issues\")))+(\"controller customizable\"))",
+        "target": "B08LT6PT1X"
+    },
+    "113": {
+        "generated_text": "(\"(\"faster product cost 7. 99\" site:com\")|(\"easier control product cost 7. 99\" site:com\")).&(\"stable product cost 7. 99\" site:com\")).)",
+        "target": "B01I14IASK"
+    },
+    "114": {
+        "generated_text": "(\"(\"case good quality\" site:com\")|(\"case perfect fit\" site:com\")).&(\"case value for money\" site:com\")))+(\"case fit perfect\" site:com\"))",
+        "target": "B0BB6NW6RF"
+    },
+    "115": {
+        "generated_text": "(\"(\"pink remote control sims\" site:com\")|(\"remote control pink\" site:com\")).&(\"remote control sims\")))+(\"remote control pink sims\")",
+        "target": "B08LT6PT1X"
+    },
+    "116": {
+        "generated_text": "(\"(\"keyboard sound linear\" site:com\")|(\"keyboard tactile sound\" site:com\")).&(\"keyboard detachable keypad\" site:com\")))-(\"site:gov\"))-(\"site:org\")",
+        "target": "B099B1BSDH"
+    },
+    "117": {
+        "generated_text": "\n{\n    \"query\": \"(\\\"(\\\"oculus head strap comfort\\\" site:com\\\")|(\\\"oculus head strap review\\\" site:com\\\")).&(\\\"head strap comfort\\\" site:com\\\"))\"\n}\"\n",
+        "target": "B0BPNX3X16"
+    },
+    "118": {
+        "generated_text": "(\"(\"mouse comfortable weight\" site:com\")|(\"mouse first suitable\" site:com\")).&(\"mouse price affordable\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0BWXXWVV6"
+    },
+    "119": {
+        "generated_text": "(\"(\"xbox controller\" site:com\")|(\"xbox controller\" site:com\")|(\"xbox controller\" site:com\")).&(\"controller look\")))+(\"controller value\"))",
+        "target": "B094Y1G4F4"
+    },
+    "120": {
+        "generated_text": "(\"(\"anker products\" site:com\")|(\"quality products\" site:com\")).&(\"value products\" site:com\"))",
+        "target": "B07ML5ZBBG"
+    },
+    "121": {
+        "generated_text": "(\"(\"adapter nintendo system adapter\" site:com\")|(\"nintendo system adapter\" site:com\")).&(\"adapter older game system adapter\")))+(\"adapter tv connection adapter\")",
+        "target": "B0BW8N6X48"
+    },
+    "122": {
+        "generated_text": "(\"(\"replacement wii u pro controller\" site:com\")|(\"wii u pro controller replacement\" site:com\")).&(\"controller longer battery life\")))+(\"controller cheaper option\"))",
+        "target": "B07HMY3FXR"
+    },
+    "123": {
+        "generated_text": "(\"(\"golf game improvement\" site:com\")|(\"golf shot making help\" site:com\")).&(\"product review\")))+(\"golf equipment improvement\"))",
+        "target": "B016P09VFS"
+    },
+    "124": {
+        "generated_text": "(\"(\"replacement shoulder buttons 3ds\" site:com\")|(\"3ds shoulder buttons homebrew\" site:com\")).&(\"replacement 3ds shoulder buttons smash bros\"))",
+        "target": "B06WVMJTBZ"
+    },
+    "125": {
+        "generated_text": "(\"(\"rechargeable batteries wii controllers\" site:com\")|(\"wii controller charger rechargeable\" site:com\")).&(\"batteries rechargeable wii controllers\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B09CDRWBWN"
+    },
+    "126": {
+        "generated_text": "(\"(\"head strap bobo vr\" site:com\")|(\"head strap elite strap meta\" site:com\")).&(\"head strap customer support\"))",
+        "target": "B09JNR4Y15"
+    },
+    "127": {
+        "generated_text": "(\"(\"xbox cable\" site:com\")|(\"xbox replacement cable\" site:com\")).&(\"cable fast shipping\")))+(\"xbox cable replacement\"))",
+        "target": "B07QZ39MWQ"
+    },
+    "128": {
+        "generated_text": "(\"(\"controller grip\" site:com\")|(\"controller quality\" site:com\")).&(\"controller aesthetic\")))+(\"controller grips\"))",
+        "target": "B09MQK3C75"
+    },
+    "129": {
+        "generated_text": "(\"(\"macro buttons\" site:com\")|(\"video editing software\" site:com\")).&(\"image editing software\" site:com\")))+(\"save time editing\")",
+        "target": "B07CRX5X9T"
+    },
+    "130": {
+        "generated_text": "(\"(\"easy install product pack of 3\" site:com\")|(\"durable product pack of 3\" site:com\")).&(\"product easy install\" site:com\"))",
+        "target": "B0BRF6PX4Z"
+    },
+    "131": {
+        "generated_text": "(\"(\"peppa pig game\" site:com\")|(\"peppa pig themed game\")))+(\"car ride game\"))",
+        "target": "B095D634SZ"
+    },
+    "132": {
+        "generated_text": "(\"(\"christmas gift son\" site:com\")|(\"gift ideas son christmas\")))+(\"toy gift son\"))",
+        "target": "B07NYBD2CZ"
+    },
+    "133": {
+        "generated_text": "(\"(\"ps4 for sale\" site:com\")|(\"ps4 husband\" site:com\")).&((\"ps4 son\" site:com\"))))+(\"ps4 bundle\")",
+        "target": "B09MJWB56J"
+    },
+    "134": {
+        "generated_text": "(\"(\"keycaps rgb lighting\" site:com\")|(\"keycap smooth feel\" site:com\")).&(\"keycaps color combination\")))+(\"keycaps premium feel\")",
+        "target": "B08LZHPTF5"
+    },
+    "135": {
+        "generated_text": "(\"(\"can of evil\" site:com\")|(\"evil can\" site:com\")).&(\"decent price\"))",
+        "target": "B07NQH43DC"
+    },
+    "136": {
+        "generated_text": "(\"(\"battery life product\" site:com\")|(\"computer connection product\" site:com\")).&(\"receiver storage compartment\")))+(\"portable audio receiver\"))",
+        "target": "B0C6ZZT79Q"
+    },
+    "137": {
+        "generated_text": "(\"(\"helpful design battery life\" site:com\")|(\"cool design battery life\" site:com\")).&(battery life site:com\")))+(\"product recommendation battery life\"))",
+        "target": "B0C3CZ87RP"
+    },
+    "138": {
+        "generated_text": "(\"(\"white acnh switch thumb grips\" site:com\")|(\"acnh switch white thumb grips\")))+(\"white acnh button caps\")).",
+        "target": "B08HQMDH97"
+    },
+    "139": {
+        "generated_text": "(\"(\"desk holder headphone cord\" site:com\")|(\"desk holder rotation\" site:com\")).&(\"headphone cord holder desk\" site:com\")))-(\"site:gov\")-(\"site:org\")",
+        "target": "B0BLTV2BKZ"
+    },
+    "140": {
+        "generated_text": "(\"(\"wireless mouse no hand cramp\" site:com\")|(\"wireless mouse battery life\" site:com\")).&(\"wireless mouse light weight\" site:com\"))))",
+        "target": "B0C89J78ZW"
+    },
+    "141": {
+        "generated_text": "(\"(\"castlevania lords of shadows games\" site:com\")|(\"castlevania lords of shadows characters\" site:com\")).&(\"gameplay mechanics\")))+(\"castlevania lords of shadows dlc\")",
+        "target": "B008B2ZKK4"
+    },
+    "142": {
+        "generated_text": "(\"(\"mouse customization options\" site:com\")|(\"mouse gaming\" site:com\")).&(\"mouse battery life\")))+(\"mouse wireless charging\"))",
+        "target": "B0BNNPD4BH"
+    },
+    "143": {
+        "generated_text": "(\"(\"power supply xbox\" site:com\")|(\"xbox power supply replacement\" site:com\")).&(\"affordable power supply\")))+(\"xbox power supply replacement\"))",
+        "target": "B07GD8TN2M"
+    },
+    "144": {
+        "generated_text": "(\"(\"xbox 360 hard drive\" site:com\")|(\"xbox 360 external hard drive\" site:com\")).&(\"hard drive xbox 360\")))+(\"xbox 360 hard drive review\")",
+        "target": "B014SIVGAW"
+    },
+    "145": {
+        "generated_text": "(\"(\"mouse good cheap\" site:com\")|(\"mouse stable connection\" site:com\")).&(\"mouse no middle button\" site:com\")))+(\"mouse battery life\"))",
+        "target": "B08R5SH1T6"
+    },
+    "146": {
+        "generated_text": "\n{\n    \"query\": \"(\\\"(\\\"desk accessory medium size\\\" site:com\\\")|(\\\"desk organizer medium size\\\" site:com\\\")).&(\\\"desk accessory small size\\\" site:com\\\"))\"\n}\"\n",
+        "target": "B09S95BGBV"
+    },
+    "147": {
+        "generated_text": "(\"(\"precision scientific imaging\" site:com\")|(\"scientific imaging pixels\")))+(\"LED alternative imaging\"))",
+        "target": "B084RHZTYW"
+    },
+    "148": {
+        "generated_text": "(\"(\"control battery life\" site:com\")|(\"control reasonable price\" site:com\")).&(\"control battery life\" site:com\"))",
+        "target": "B09FQ5HM4Y"
+    },
+    "149": {
+        "generated_text": "(\"(\"headphones wired quality review\" site:com\")|(\"headphones gaming quality\" site:com\")).&(\"headphones wired reviews\")))-(\"headphones wireless\"))",
+        "target": "B0C5K4M7WJ"
+    }
+}

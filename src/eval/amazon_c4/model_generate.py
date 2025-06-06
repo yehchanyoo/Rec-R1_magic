@@ -9,7 +9,7 @@ import pdb
 import re
 import numpy as np
 
-CACHE_DIR = "/srv/local/data/linjc/hub"
+CACHE_DIR = os.environ["HF_HOME"]
 
 def load_model(model_path):
     tokenizer = AutoTokenizer.from_pretrained(model_path, padding_side='left', cache_dir=CACHE_DIR)
