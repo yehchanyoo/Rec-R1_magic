@@ -18,6 +18,31 @@ REC-R1 is a general framework that bridges generative large language models (LLM
   <img  src="resources/rec-r1-compa.png" />
 </p>
 
+# Replication
+
+Much of our replication work can be done by using the SLURM scripts in `slurm/` (if in a system that supports SLURM) and the Bash scripts in `scripts/repro/`. (For a more detailed step-by-step view of what Bash scripts to run in order, you can take a look at the SLURM scripts!)
+
+If containerization is needed, then you can create a Docker container or an Apptainer based on the files in `docker/`.
+
+It is required that you use a `secrets.env` file with your Weights & Biases API key and your Hugging Face API key to allow the repository to work, as follows, since the repository code involves heavy usage of Weights & Biases and Hugging Face API services:
+
+```
+WANDB_API_KEY="<>"
+HF_TOKEN="<>"
+```
+
+Here is an example Bash code for creating and running an Apptainer:
+
+```
+cd docker
+apptainer build ngc-vllm.sif ngc-vllm.def
+apptainer shell --nv --bind /dev/shm:/dev/shm --bind /gscratch/scrubbed/$USER/Rec-R1_magic:/home/rapids/Rec-R1_magic --env-file ../secrets.env ngc-vllm.sif
+```
+
+If you want to make a Conda environment without following the steps in the original README content below, you can also use `environment.yml` to set up the environment. 
+
+# Original README Content
+
 ## Installation
 
 ```bash
