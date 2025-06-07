@@ -42,7 +42,7 @@ pip install pyserini
 pip install faiss-gpu
 
 # if you don't have jave in the environment
-conda install -c conda-forge openjdk=17
+conda install -c conda-forge openjdk=21
 export JAVA_HOME=~/miniconda3/envs/zero
 export PATH=$JAVA_HOME/bin:$PATH
 ```
